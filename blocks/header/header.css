@@ -1,4 +1,8 @@
 /* header and nav layout */
+header {
+  display: none;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;

@@ -1,0 +1,200 @@
+main .form {
+    padding: var(--spacing-m);
+    display: inline-block;
+    padding: 5px;
+    box-shadow: 0 1px 6px rgb(34 34 34 / 20%);
+}
+
+main .form > div {
+    padding: 10px;
+}
+
+main .form-container {
+    padding-top: 0;
+    background-color: whitesmoke;
+}
+
+main .form .button-container .field-wrapper > label {
+    text-align: left;
+}
+
+main .form .button-container .field-wrapper > input {
+    display: block;
+    margin: 0;
+}
+
+main .form-wrapper {
+    margin: auto;
+    width: 350px;
+}
+
+main .field-wrapper .required {
+    text-transform: capitalize;
+}
+
+main .form-container .default-content-wrapper {
+    width: 350px;
+    margin: auto;
+}
+
+  main .form-container h2 {
+    padding: var(--spacing-m) 0;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    margin-top: 0;
+    text-align: center;
+    margin: auto;
+  }
+
+  main .form h3 {
+    padding-top: var(--spacing-m);
+    font-size: var(--type-heading-m-size);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  main .form input,
+  main .form textarea,
+  main .form select {
+    border: 1px solid rgb(193 193 195);
+    padding: 11px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 50rem;
+    box-sizing: border-box;
+    margin-top: 4px;
+  }
+
+  main .form textarea {
+    min-height: 100px;
+    background-color: #EFEEE7;
+  }
+
+  main .form input:hover,
+  main .form select:hover {
+    border-color: rgb(90 92 96);
+  }
+
+  main .form label {
+    width: 100%;
+    display: block;
+    font-size: var(--type-body-s-size);
+    line-height: var(--type-body-s-lh);
+    padding-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+
+  main .form label.required::after {
+    content: "*";
+    color: red;
+    padding-left: 5px;
+  }
+
+  main .form .field-wrapper {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+
+  main .form .form-checkbox-wrapper {
+    display: flex;
+    margin: var(--spacing-s) 0;
+  }
+
+  main .form .form-checkbox-wrapper input[type='checkbox'] {
+    display: none;
+  }
+
+  main .form .form-checkbox-wrapper input[type='checkbox'] + label::before {
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    content: ' ';
+    background: url('./checkbox.svg');
+    background-size: contain;
+  }
+
+  main .form .form-checkbox-wrapper input[type='checkbox']:checked +label::before {
+    background: url('./checkbox-checked.svg');
+    background-size: contain;
+    content: ' ';
+  }
+
+  main .form .form-checkbox-wrapper label {
+    font-size: var(--type-body-m-size);
+    font-weight: normal;
+    text-transform: none;
+    display: block;
+    width: 300vw;
+  }
+
+  main .form .form-checkbox-wrapper .required {
+    width: 1000px;
+  }
+
+  main .form .button {
+    cursor: pointer;
+    background: rgb(20 115 230);
+    color: white;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 6px 16px;
+    border: none;
+    font-family: adobe-clean, 'Trebuchet MS', sans-serif;
+    display: block;
+  }
+
+  main .form .form-submit-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  main .form .form-submit-wrapper .button {
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 0.8em;
+    width: 120px;
+    height: 40px;
+    background-color: #EFEEE7;
+    color: black;
+  }
+
+  main .form .form-submit-wrapper .button:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (min-width: 600px) {
+    main .form {
+        padding: 20px;
+    }
+
+    main .form-wrapper {
+        width: 500px;
+        margin: auto;
+    }
+
+    main .form-container .default-content-wrapper {
+        width: 500px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    main .form-wrapper {
+        width: 650px;
+    }
+
+    main .form-container .default-content-wrapper {
+        width: 650px;
+    }
+}
