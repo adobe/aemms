@@ -29,8 +29,12 @@ main .form-wrapper {
     width: 350px;
 }
 
-main .field-wrapper .required {
-    text-transform: capitalize;
+main .field-wrapper label.required {
+    text-transform: none;
+}
+
+main .field-wrapper label:not(.required) {
+  text-transform: none;
 }
 
 main .form-container .default-content-wrapper {
