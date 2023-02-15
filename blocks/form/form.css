@@ -3,6 +3,7 @@ main .form {
     display: inline-block;
     padding: 5px;
     box-shadow: 0 1px 6px rgb(34 34 34 / 20%);
+    box-sizing: border-box;
 }
 
 main .form > div {
@@ -35,6 +36,30 @@ main .field-wrapper .required {
 main .form-container .default-content-wrapper {
     width: 350px;
     margin: auto;
+}
+
+main .form-container .default-content-wrapper:first-child p strong {
+  display: inline-block;
+  font-size: 15px;
+  text-align: justify;
+  color: darkblue;
+}
+
+main .form-container .default-content-wrapper:first-child p em {
+  font-size: 14px;
+  text-align: center;
+  color: red;
+  font-style: normal;
+  display: block;
+}
+
+main .form-container .default-content-wrapper:last-child p {
+  font-size: 15px;
+  text-align: justify;
+  color: darkgreen;
+  line-height: 1.5em;
+  font-weight: bold;
+  padding-top: 20px; 
 }
 
   main .form-container h2 {
@@ -191,7 +216,7 @@ main .form-container .default-content-wrapper {
 
 @media (min-width: 900px) {
     main .form {
-        display: inline-block;
+        display: block;
         margin: auto;
     }
 
