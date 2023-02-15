@@ -83,7 +83,7 @@ main .form-container .default-content-wrapper {
     font-size: var(--type-body-s-size);
     line-height: var(--type-body-s-lh);
     padding-bottom: var(--spacing-xs);
-    text-transform: uppercase;
+    text-transform: none;
     box-sizing: border-box;
     font-weight: 500;
     padding-bottom: 5px;
@@ -190,7 +190,13 @@ main .form-container .default-content-wrapper {
 }
 
 @media (min-width: 900px) {
+    main .form {
+        display: inline-block;
+        margin: auto;
+    }
+
     main .form-wrapper {
+        margin: auto;
         width: 650px;
     }
 
