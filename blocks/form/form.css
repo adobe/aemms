@@ -52,9 +52,10 @@ main .form-container .default-content-wrapper:first-child p strong {
 main .form-container .default-content-wrapper:first-child p em {
   font-size: 14px;
   text-align: center;
-  color: red;
+  color: darkblue;
   font-style: normal;
   display: block;
+  text-decoration: underline;
 }
 
 main .form-container .default-content-wrapper:last-child p {
