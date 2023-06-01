@@ -49,12 +49,12 @@ governing permissions and limitations under the License.
     color: black;
 }
 
-.columns.feature > div > div:first-child > h3 {
+.columns.feature > div > div > h3 {
     color: yellow;
     font-size: 1em;
 }
 
-.columns.feature > div > div > h3 {
+.columns.feature > div > div:first-child > h3 {
     color: yellow;
     font-size: 1em;
 }
