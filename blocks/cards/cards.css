@@ -10,26 +10,47 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
+.cards {
+    position: relative;
+}
+
 .cards > ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 12px;
+    object-fit: cover;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
 }
+
 
 .cards > ul > li {
     border: 1px solid var(--highlight-background-color);
-    background-color: var(--background-color)
+    background-color: var(--background-color);
+    margin: 0;
 }
 
 .cards .cards-card-body {
     margin: 16px;
+    border: 1in;
+    text-align: left;
+    z-index: 10;
+    font-size: 15px;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: -6.5rem ;
 }
 
+
 .cards .cards-card-image {
+    overflow: hidden;
     line-height: 0;
+    opacity: 1;
+    transition: opacity 1s;  
+    width: 100%; 
 }
 
 .cards .cards-card-body > *:first-child {
@@ -37,7 +58,87 @@ governing permissions and limitations under the License.
 }
 
 .cards > ul > li img {
+    display: inline-block;
+    text-align: center;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    aspect-ratio: 5 / 7;
+    height: auto; 
+    transform: scale(1);
+}
+
+.cards > ul > li img:hover {
+    transition: 0.4s ease-in-out;
+    transform: scale(1.02);
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.cards.office > ul > li img:hover {
+    width: 100%;
+    transform: none;
+    transition: none;
+    cursor: default;
+}
+
+main .section.backcolor .cards-wrapper {
+    padding: 0;
+    max-width: 100%;
+}
+
+main .section.backcolor .cards-wrapper .cards > ul {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li img:hover {
+    transition: none;
+    transform: none;
+    cursor: default;
+    display: block;
+    width: 100%;
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-image > picture img {
+    max-height: 500px;
+    position: relative;
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body {
+    padding-left: 20px;
+    position: absolute;
+    color: white;
+    margin-top: -450px;
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body > p:first-child {
+    color: white;
+    font-size: 2.5em; 
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body > p:nth-last-child(3) {
+    color: white;
+    margin-top: 250px;   
+    padding-left: 0;
+    font-size: 1em; 
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body > p:nth-last-child(2) {
+    color: white;
+    font-size: 1em; 
+}
+
+main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body > p:last-child {
+    color: white;
+    font-size: 1em; 
+}
+
+@media (min-width: 900px) {
+    .section.card-align .cards-wrapper {
+        padding: 40px;
+    }
+
+    main .section.backcolor .cards-wrapper .cards > ul > li .cards-card-body {
+        padding-left: 20px;
+    }
 }

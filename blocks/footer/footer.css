@@ -12,8 +12,9 @@ governing permissions and limitations under the License.
 
 footer {
   padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-xs);
+  background-color: white;
+  font-size: var(--body-font-size-s);
+  color: black;
 }
 
 footer .footer {
@@ -23,9 +24,34 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
-  text-align: center;
 }
 
-footer .footer p:first-child {
-  padding-top: 50px;
+footer .footer > div > div > p:first-child > picture img {
+  width: 90px;
+  height: 110px;
+}
+
+footer .footer > div > div > p:nth-last-child(3) {
+  padding-top: 10px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+footer .footer > div > div > p:nth-last-child(2) > picture img {
+  padding-top: 10px;
+  width: 25px;
+  height: 20px;
+}
+
+footer .footer > div > div > p:last-child {
+  padding-top: 10px;
+  font-size: 15px;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  footer .footer {
+    margin-left: 0;
+  }
 }

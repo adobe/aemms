@@ -11,12 +11,229 @@ governing permissions and limitations under the License.
 */
 
 .columns > div {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.columns img {
+/* Column (feature) */
+.columns.feature > div {
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.columns.feature > div > div:first-child {
+    border-bottom: 1px solid white;
+    padding-top: 20px;
+    padding-right: 0;
+}
+
+.columns.feature > div > div:first-child > p {
+    font-size: 0.75em;
+    text-align: justify;
+}
+
+.columns.feature > div > div {
+    padding-left: 0;
+}
+
+.columns.feature > div > div > p > em > a.button.secondary {
+    border: 1px solid white;
+    border-radius: 0;
+    font-size: 0.75em;
     width: 100%;
+}
+
+.columns.feature > div > div > p > em > a.button.secondary:hover {
+    background-color: white;
+    color: black;
+}
+
+.columns.feature > div > div:first-child > h3 {
+    color: yellow;
+    font-size: 1em;
+}
+
+.columns.feature > div > div > h3 {
+    color: yellow;
+    font-size: 1em;
+}
+
+.columns.feature > div > div:last-child {
+    padding-right: 0;
+    padding-top: 20px;
+}
+
+.columns.feature > div > div:last-child > p {
+    font-size: 0.75em;
+    text-align: justify;
+}
+
+/* Column (suite) */
+.columns.suite img {
+    width: 100%;
+}
+
+.columns.suite > div {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 50px;
+}
+
+.columns.suite > div > div > h3 {
+    color: yellow;
+    padding-left: 5px;
+    font-size: 1em;
+}
+
+.columns.suite > div > div:first-child {
+    padding-top: 10px;
+    padding-right: 0;
+    border-right: none;
+}
+
+.columns.suite > div > div:last-child {
+    padding-left: 5px;
+    font-size: 0.75em;
+    text-align: justify;
+}
+
+/* Column (discover) */
+.columns.discover > div > div:first-child {
+    text-align: left;
+    border-right: none;
+    padding-left: 0;
+    margin-top: -50px;
+}
+
+.columns.discover > div > div:first-child > h4 {
+    font-size: 1.5em;
+}
+
+.columns.discover > div > div:first-child > p > em > a.button.secondary {
+    border: 1px solid white;
+    border-radius: 0;
+    font-size: 0.6em;
+    width: 100%;
+    margin-top: 0;
+    background-color: white;
+    color: black;
+}
+
+.columns.discover > div > div:first-child > p > em > a.button.secondary:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.columns.discover > div > div:last-child > p.button-container {
+    padding-left: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 10px);
+    margin-right: 10px;
+    border-radius: 5px;
+    display: inline;
+}
+
+.columns.discover > div > div:last-child > p {
+    padding-left: 0;
+    font-size: 0.75em;
+}
+
+.columns.discover > div > div:last-child > p .button.secondary:hover {
+    background-color: black;
+    color: white;
+}
+
+.columns.discover > div > div:last-child > p > em > a.button.secondary {
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 0.75em;
+    margin-top: 0;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    
+}
+
+.columns.working {
+    background-color: var(--background-color);
+}
+
+.columns.working > div > div:first-child {
+    padding-top: 10px;
+    padding-right: 20px;
+    border-right: none;
+    padding-left: 20px;
+    order: 2;
+}
+
+.columns.working > div > div:first-child > h3 {
+    font-size: 1.1em;
+}
+
+.columns.working > div > div:first-child > p {
+    font-size: 0.7em;
+    text-align: justify;
+}
+
+.columns.working > div > div:first-child > p > em > a.button.secondary {
+    border: 1px solid white;
+    border-radius: 0;
+    font-size: 0.9em;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--background-color);
+    color: white;
+}
+
+/* Columns (subscribe) */
+.columns.subscribe {
+    background-color: yellow;
+    padding: 0 30px;
+    color: black;
+}
+
+.columns.subscribe > div > div > p > em > a.button.secondary {
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 0.75em;
+    width: 100%;
+    margin-top: 0;
+    background-color: yellow;
+    color: black;
+}
+
+.columns.subscribe > div > div:first-child > p > em > a.button.secondary:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Columns (law) */
+.columns.law {
+    background-color: #f6f6fa;
+    padding-left: 30px;
+    color: black;
+    text-align: center;
+    padding-right: 30px;
+    margin-top: 20px;
+    margin-bottom: -65px;
+}
+
+.columns.law > div > div > p > em > a.button.secondary {
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 0.75em;
+    width: 100%;
+    margin-top: 0;
+    background-color: #f6f6fa;
+    color: black;
+}
+
+.columns.law > div > div:first-child > p > em > a.button.secondary:hover {
+    background-color: black;
+    color: white;
 }
 
 @media (min-width: 900px) {
@@ -33,5 +250,153 @@ governing permissions and limitations under the License.
 
     .columns > div > div:first-of-type {
         margin-left: unset;
+    }
+
+    .columns.suite img {
+        width: 70%;
+    }
+
+    .columns.suite > div {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .columns.suite > div > div > h3 {
+        color: yellow;
+        padding-left: 25%;
+        font-size: 1.2em;
+    }
+
+    .columns.suite > div > div:first-child {
+        padding-top: 2%;
+        border-right: none;
+        width: 100%;
+    }
+
+    .columns.suite > div > div:first-child > p {
+        margin-right: -25%;
+    }
+
+    .columns.suite > div > div:first-child > p img {
+        margin-left: 10%;
+        width: 70%;
+    }
+
+    .columns.suite > div > div:last-child {
+        margin-top: -20%;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    /* Column (feature) */
+    .columns.feature > div > div:first-child {
+        border-right: 1px solid white;
+        border-bottom: none;
+        padding-top: 70px;
+        padding-right: 50px;
+    }
+
+    .columns.feature > div > div {
+        padding-left: 60px;
+    }
+
+    .columns.feature > div > div > p > em > a.button.secondary {
+        border: 1px solid white;
+        border-radius: 0;
+        font-size: 0.75em;
+        width: auto;
+    }
+
+    .columns.feature > div > div > p > em > a.button.secondary:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .columns.feature > div > div:first-child > h3 {
+        color: yellow;
+        font-size: 1.25em;
+    }
+
+    .columns.feature > div > div > h3 {
+        color: yellow;
+        font-size: 1.25em;
+    }
+
+    .columns.feature > div {
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .columns.subscribe > div {
+        position: relative;
+    }
+
+    .columns.subscribe > div > div > p > em > a.button.secondary {
+        width: auto;
+    }
+
+    .columns.subscribe > div > div .button-container {
+       top: 20%;
+       position: absolute;
+       right : 5%;
+    }
+
+    .columns.law  > div > div > p {
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+    .columns.law > div > div > p > em > a.button.secondary {
+        width: auto;
+    }
+
+    .columns.working > div > div:first-child > p > em > a.button.secondary {
+        width: auto;
+    }
+
+    .columns.working > div > div:first-child > h3 {
+        font-size: 1.4em;
+    }
+
+    .columns.working > div > div:first-child {
+        padding-left: 5%;
+        border-right: none;
+        order: 1;
+    }
+
+    .columns.working > div > div:first-child > p {
+        font-size: 0.9em;
+        text-align: left;
+        width: 580px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        padding-left: 50px;
+    }
+
+    .columns.working > div > div:first-child > h3 {
+        font-size: 1.1em;
+        padding-left: 50px;
+    }
+
+    .columns.working > div > div:last-child {
+        width: 100%;
+        height: 100%;
+        order: 2;
+    }
+
+    .columns.discover > div > div:first-child > h4 {
+        font-size: 1.8em;
+    }
+
+    .columns.discover > div > div:first-child > p > em > a.button.secondary {
+        width: auto;
+    }
+
+    .columns.discover > div > div:first-child {
+        border-right: none;
+        padding-left: 10%;
+        margin-top: 0;
     }
 }
