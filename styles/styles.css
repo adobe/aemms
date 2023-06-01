@@ -14,20 +14,21 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: #fff;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #000;
+  --background-color: #2e2e38;
+  --overlay-background-color: #2e2e38;
+  --highlight-background-color: #2e2e38;
+  --text-color: white;
+  --highlight-color: #ffe600;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: eyinterstate, 'trebuchet ms', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
   --heading-font-size-xxl: 48px;
@@ -38,7 +39,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 80px;
 
 }
 
@@ -46,6 +47,7 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
+  font-weight: 300;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -63,7 +65,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
@@ -105,10 +107,14 @@ pre {
   overflow: scroll;
 }
 
+strong {
+  font-weight: 700;
+}
+
 /* buttons */
 
 a.button:any-link, button {
-  font-family: var(--body-font-family);
+  font-family: var(--font-family-body);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
@@ -163,7 +169,13 @@ main input:hover {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 64px 0;
+}
+
+main .section > div {
+  padding: 0 16px;
+  max-width: 350px;
+  margin: auto;
 }
 
 main pre {
@@ -206,7 +218,11 @@ main img {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 64px 0;
+  }  
+
+  main .section > div {
+    padding: 0 32px;
   }  
 }
 
@@ -220,10 +236,37 @@ main img {
     --heading-font-size-xs: 22px;  
   }
   
-  .section > div {
-    max-width: 1200px;
+  main .section > div.cards-wrapper {
+    max-width: unset;
+    margin-left: 0;
+  }
+
+  main .section > div {
+    max-width: 1600px;
     margin: auto;
   }
+
+  /* main .section.case-color > div::before {
+    content: '';
+    position: absolute;
+    width: 93%;
+    height: 1px;
+    background: none;
+    top: -10px;
+  } */
+
+  main .section.cards-container .default-content-wrapper {
+    padding-left: 45px;
+    position: absolute;
+  }
+
+  main .section.cards-container .default-content-wrapper > p {
+    margin-top: -75px;
+  }
+
+  main .section.card-align {
+    padding-top: 120px;
+  } 
 }
 
 /* progressive section appearance */
@@ -233,5 +276,42 @@ main .section[data-section-status='initialized'] {
 }
 
 main .section.highlight {
-  background-color: var(--highlight-background-color);
+  background-color: white;
+  padding: 0;
+}
+
+main .default-content-wrapper {
+  margin-left: 5px;
+  font-size: xx-large;
+}
+
+main .default-content-wrapper > p {
+  margin-top: -75px;
+}
+
+main .section.align {
+  background-color: black;
+}
+
+main .section.backcolor .default-content-wrapper {
+  color: black;
+}
+
+main .section.backcolor .default-content-wrapper > p {
+  margin-top: 30px;
+}
+
+main .section.color {
+  background-color: white;
+}
+
+/* main .section.case-color {
+  padding-top: 0;
+  position: relative;
+} */
+
+main .section.backcolor {
+  background-color: white;
+  padding-bottom: 0;
+  padding-top: 20px;
 }
