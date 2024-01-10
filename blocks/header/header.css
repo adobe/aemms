@@ -1,5 +1,5 @@
 /* header and nav layout */
-header .nav-wrapper {
+header .header-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
@@ -53,6 +53,7 @@ header nav p {
   line-height: 1;
   display: flex;
   gap: 15px;
+  color: var(--secondary);
 }
 
 header nav a:any-link {
