@@ -332,6 +332,7 @@ main .section.three-columns-layout.with-static-background-image > picture {
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
   margin-top: 1em;
+  border-bottom: 1px solid var(--primary);
 }
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h3:first-of-type {
