@@ -1,5 +1,5 @@
 /* header and nav layout */
-header .header-wrapper {
+header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
