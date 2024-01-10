@@ -176,13 +176,7 @@ governing permissions and limitations under the License.
   }
   
   main .cards.flat-list .cards-card-image {
-    height: 135px;
-    width: 240px;
-    display: flex;
-    align-self: flex-start;
-    padding: 0;
-    justify-content: center;
-    overflow: hidden;
+    height: auto;
   }
   
   /* Styles for info points cards */
@@ -480,8 +474,8 @@ governing permissions and limitations under the License.
   
   @media screen and (min-width: 77rem) {
     .cards.grid > ul {
-      grid-template-columns: repeat(auto-fill, 21.875rem);
-      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, 18.875rem);
+      justify-content: center;
       grid-gap: 3rem;
     }
   
