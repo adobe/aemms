@@ -14,13 +14,21 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: #fff;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #000;
+  --background-color: white;
+  --light-color: #eee;
+  --dark-color: #ccc;
+  --text-color: black;
+  --white: white;
+  --secondary: #007cad;
+  --primary: #00587c;
+  --h1-font-size-mobile: var(--heading-font-size-m);
+  --font-weight-small: 300;
+  --transparent-grey-color-2: #3c4650b2;
+  --transparent-blue: #f0f5f7;
+  
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -33,13 +41,35 @@
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
   --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
+  --heading-font-size-m: 28px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
   /* nav height */
   --nav-height: 64px;
+}
 
+@font-face {
+  font-family: roboto-fallback;
+  size-adjust: 100.06%;
+  ascent-override: 95%;
+  src: local('Arial');
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 36px;
+    --heading-font-size-m: 30px;
+    --heading-font-size-s: 24px;
+    --heading-font-size-xs: 22px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
@@ -53,7 +83,7 @@ body {
 }
 
 body.appear {
-  display: unset;
+  display: block;
 }
 
 header {
@@ -82,6 +112,28 @@ p, dl, ol, ul, pre, blockquote {
   margin-bottom: 1em;
 }
 
+code, pre {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code {
+  padding: .125em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+main pre {
+  background-color: var(--light-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
@@ -92,21 +144,7 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
-}
-
-code, samp {
-  padding: .125em;
-}
-
-pre {
-  overflow: scroll;
-}
-
 /* buttons */
-
 a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
@@ -115,7 +153,7 @@ a.button:any-link, button {
   border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
@@ -133,7 +171,7 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
 }
 
 button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
+  background-color: var(--light-color);
   cursor: unset;
 }
 
@@ -141,61 +179,6 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
-} 
-
-
-main input {
-  font-size: 1.25rem;
-  width: 100%;
-  max-width: 50rem;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
-  border-radius: 0.25rem;
-  box-sizing: border-box;
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-main input:hover {
-  border: 1px solid var(--text-color);
-}
-
-main .section {
-  padding: 64px 16px;
-}
-
-main pre {
-  background-color: var(--overlay-background-color);
-  padding: 1em;
-  border-radius: .25em;
-  overflow-x: auto;
-  white-space: pre;
-}
-
-main blockquote {
-  font-style: italic;
-  margin: 3rem;
-  text-indent: -1rem;
-  hanging-punctuation: first;
-}
-
-main blockquote p::before {
-  content: "“";
-  line-height: 0;
-}
-
-main blockquote p::after {
-  content: "”";
-  line-height: 0;
-}
-
-hr {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  border: 0;
-  border-bottom: 1px solid var(--overlay-background-color);
 }
 
 main img {
@@ -204,34 +187,275 @@ main img {
   height: auto;
 }
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 64px 32px;
-  }  
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
 }
 
-@media (min-width: 900px) {
-  :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* sections */
+main .section {
+  padding: 64px 16px;
+}
+
+.compact {
+  max-width: 40rem;
+}
+
+.no-borders * {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+.white {
+  color: var(--white);
+}
+
+
+/* section - small narrow */
+main .section.small-narrow {
+  margin-top: 3rem;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.small-narrow > .section-container,
+main .section.small-narrow > .tab-item.active > .section-container {
+  padding: 0 1rem;
+}
+
+main .section.small-narrow h1 {
+  margin-bottom: 2.5rem;
+}
+
+main .section.small-narrow h5 {
+  margin-bottom: 0.5rem;
+}
+
+main .section.bg-transparentgrey {
+  background-color: var(--transparent-blue);
+}
+
+main .section.transparent-grey-color h6 {
+  color: #3c4650b2;
+  border-bottom: 1px var(--transparent-grey-light-color) solid;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-bottom: 0.5rem;
+  text-transform: unset;
+  font-weight: 400;
+}
+
+main .section.color-primary {
+  color: var(--primary);
+}
+
+main .section.color-primary h1,  main .section.color-primary h2 {
+  border-bottom: 1px solid var(--primary);
+}
+
+/* section - narrow */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.narrow > .section-container,
+main .section.narrow > .tab-item.active > .section-container {
+  padding: 0 1rem;
+  margin: auto;
+  max-width: 42rem;
+}
+
+/* section - narrower */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.narrower > .section-container,
+main .section.narrower > .tab-item.active > .section-container {
+  padding: 0 1rem;
+  margin: auto;
+  margin-block-end: 3rem;
+  max-width: 45rem;
+}
+
+/* section - narrow/narrower with background image compatibility */
+main .section.narrow.section.with-background-image > .section-container,
+main .section.narrower.section.with-background-image > .section-container {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+}
+
+main .section.narrower-picture.section.with-background-image > picture {
+  margin: auto;
+  margin-block-end: 3rem;
+  max-width: 45rem;
+}
+
+main .section.narrower.section.with-background-image > .section-container > .link-wrapper {
+  width: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.with-background-image.align-right > .section-container,
+.section.with-background-image.align-right > .tab-item.active > .section-container {
+  right: -50%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.three-columns-layout.with-background-image > picture,
+main .section.three-columns-layout.with-static-background-image > picture {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Section Styles for background images */
+.section.with-background-image, .section.with-static-background-image {
+  position: relative;
+  padding: 0;
+}
+
+.section.with-background-image > div:first-of-type:not(.quote-wrapper) {
+  position: absolute;
+  padding-left: 5%;
+  padding-top: 4%;
+  width: 60%;
+  color: var(--primary);
+}
+
+.section.with-background-image > div:first-of-type:not(.quote-wrapper) h1 {
+  border-bottom: 1px solid var(--primary);
+}
+
+.section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
+  margin-top: 2em;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.with-background-image > picture, .section.with-static-background-image > picture {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.float-image-right picture {
+  float: right;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.with-background-image > picture > img, .section.with-static-background-image > picture > img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (width >= 600px) {
+  main .section {
+    padding: 64px 32px;
+  }
+
+  /* section - small narrow */
+  main .section.small-narrow > .section-container {
+    padding: unset;
+  }
+
+  main .section.small-narrow h1 {
+    margin-bottom: 3.5rem;
+  }
+
+  main .section.small-narrow h5 {
+    margin-bottom: 1rem;
+  }
+
+  /* section - static */
+  main .section.static > .section-container {
+    margin-bottom: 7.5rem;
+  }
+
+  /* section - narrow */
+  /* stylelint-disable-next-line no-descending-specificity */
+  main .section.narrow > .section-container,
+  main .section.narrow > .tab-item.active > .section-container {
+    position: relative;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 54.5rem;
+  }
+
+  /* section - narrower */
+  /* stylelint-disable-next-line no-descending-specificity */
+  main .section.narrower,
+  main .section.narrower > .tab-item.active {
+    position: relative;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 45rem;
+    margin-block-end: 3rem;
+  }
+
+  /* section - narrow/narrower with background image compatibility */
+  /* stylelint-disable-next-line no-descending-specificity */
+  main .section.narrow.with-background-image > .section-container,
+  main .section.narrower.with-background-image > .section-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  main .section.image-before {
+    position: relative;
+    max-width: 100%;
   }
   
+  main .section.image-after {
+    position: relative;
+    max-width: 100%;
+  }
+  
+  main .section > .section-container img {
+      width: 100%;
+  }
+  
+  main .section.image-before-after-t1 > div p img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 2vh;
+    z-index: 1;
+    left: 8vw;
+  }
+
+  main .section.image-before-after-t2 > div p img {
+    width: 750px;
+    height: 320px;
+    position: absolute;
+    top: -100vh;
+    z-index: 1;
+    left: 50vw;
+  }
+}
+
+@media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
   }
 }
 
-/* progressive section appearance */
-main .section[data-section-status='loading'],
-main .section[data-section-status='initialized'] {
-  display: none;
-}
-
+/* section metadata */
+main .section.light,
 main .section.highlight {
-  background-color: var(--highlight-background-color);
+  background-color: var(--light-color);
 }

@@ -133,4 +133,33 @@ async function loadPage() {
   loadDelayed();
 }
 
+export function cropString(inputString, maxLength) {
+  if (inputString.length <= maxLength) {
+    return inputString;
+  }
+
+  const words = inputString.split(/\s+/); // Split the string into words
+  let croppedString = '';
+  let currentLength = 0;
+
+  words.every((word) => {
+    if (currentLength + word.length + 1 <= maxLength) {
+      // Add the word and a space if it doesn't exceed the maxLength
+      croppedString += `${word} `;
+      currentLength += word.length + 1;
+      return true;
+    }
+    // Otherwise, stop the loop
+    return false;
+  });
+
+  // Remove trailing space and add an ellipsis if needed
+  croppedString = croppedString.trim();
+  if (croppedString.length < inputString.length) {
+    croppedString += '...';
+  }
+
+  return croppedString;
+}
+
 loadPage();
