@@ -176,7 +176,13 @@ governing permissions and limitations under the License.
   }
   
   main .cards.flat-list .cards-card-image {
-    height: auto;
+    height: 135px;
+    width: 240px;
+    display: flex;
+    align-self: flex-start;
+    padding: 0;
+    justify-content: center;
+    overflow: hidden;
   }
   
   /* Styles for info points cards */
