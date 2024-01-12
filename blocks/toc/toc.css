@@ -31,6 +31,7 @@ main .toc.block ul li {
     border-top: none;
     margin-bottom: 1rem;
     padding: 0 1rem;
+    font-size: var(--body-font-size-xs);
 }
 
 main .toc.block ul li:last-child {
@@ -57,7 +58,7 @@ main .toc-container .main-content {
 main .toc-container .toc.flat ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     padding-left: 0;
     width: 100%;
     container-type: inline-size;
@@ -85,7 +86,7 @@ main .main-content h2 {
 }
 
 main .section:not([id='']) {
-    scroll-margin-top: 11rem;
+    scroll-margin-top: 18rem;
     margin-top: 0;
 }
 
@@ -141,7 +142,7 @@ main .section:not([id='']) {
     }
 
     main .main-content h2 {
-        scroll-margin-top: 5rem;
+        scroll-margin-top: 10rem;
     }
 
     main .toc-container.section {
@@ -155,5 +156,9 @@ main .section:not([id='']) {
 @media (min-width: 77rem) {
     main .toc-container .section-container {
         max-width: 75rem;
+    }
+
+    main .section.toc-container {
+        padding: 30px 24px;
     }
 }
