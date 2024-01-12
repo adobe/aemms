@@ -359,6 +359,10 @@ main .section.float-image-right picture {
   width: 100%;
 }
 
+main .section.image-before-after-t1 {
+  padding: 0;
+}
+
 @media (width >= 600px) {
   main .section {
     padding: 64px 32px;
@@ -432,6 +436,7 @@ main .section.float-image-right picture {
   main .section > .section-container img {
       width: 100%;
   }
+
   
   main .section.image-before-after-t1 > div p img {
     width: 200px;
@@ -450,6 +455,11 @@ main .section.float-image-right picture {
     z-index: 1;
     left: 50vw;
   }
+
+  main .section.image-before-after-t1 {
+    padding: 64px 32px;
+  }
+
 }
 
 @media (width >= 900px) {

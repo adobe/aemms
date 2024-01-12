@@ -2,11 +2,12 @@
 .block.quote {
     border-left: 0.25rem solid var(--black);
     margin-bottom: 5rem;
-    margin-top: 30vh;
+    margin-top: 6vh;
     padding-left: 2rem;
     color: var(--primary);
     position: absolute;
-    left: 55vw;
+    left: 35vw;
+    font-size: var(--body-font-size-xs);
   }
   
   .block.quote.white {
@@ -25,21 +26,21 @@
   .block.quote::before {
     content: "“";
     font-family: var(--font-family-body);
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     line-height: 1;
     color: inherit;
     position: absolute;
-    top: -3.75rem;
+    top: -1.5rem;
   }
   
   .block.quote::after {
     content: "”";
     font-family: var(--font-family-body);
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     line-height: 1;
     color: inherit;
     position: absolute;
-    bottom: -5.25rem;
+    bottom: -1.5rem;
     right: 0;
   }
   
@@ -105,11 +106,68 @@
   .block.quote h1 {
     line-height: 1;
     font-weight: 550;
-  
+    font-size: var(--heading-font-size-s);
   }
-  
-  @media (min-width: 77rem) {
-    .block.quote.column {
-      flex-direction: row;
+
+  @media (min-width: 62rem) {
+    .block.quote::before {
+      content: "“";
+      font-family: var(--font-family-body);
+      font-size: 5.5rem;
+      line-height: 1;
+      color: inherit;
+      position: absolute;
+      top: -3.75rem;
     }
+
+    .block.quote::after {
+      content: "”";
+      font-family: var(--font-family-body);
+      font-size: 5.5rem;
+      line-height: 1;
+      color: inherit;
+      position: absolute;
+      bottom: -5.25rem;
+      right: 0;
+    }
+
+    .block.quote {
+      border-left: 0.25rem solid var(--black);
+      margin-bottom: 5rem;
+      margin-top: 30vh;
+      padding-left: 2rem;
+      color: var(--primary);
+      position: absolute;
+      left: 45vw;
+      font-size: var(--body-font-size-xs);
+    }
+
+    .block.quote h1 {
+      line-height: 1;
+      font-weight: 550;
+      font-size: var(--heading-font-size-m);
+    }
+
   }
+  
+    @media (min-width: 77rem) {
+      .block.quote {
+        border-left: 0.25rem solid var(--black);
+        margin-bottom: 5rem;
+        margin-top: 30vh;
+        padding-left: 2rem;
+        color: var(--primary);
+        position: absolute;
+        left: 55vw;
+      }
+
+      .block.quote h1 {
+        line-height: 1;
+        font-weight: 550;
+        font-size: var(--heading-font-size-xxl);
+      }
+  
+      .block.quote.column {
+        flex-direction: row;
+      }
+    }
