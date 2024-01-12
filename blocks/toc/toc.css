@@ -31,7 +31,7 @@ main .toc.block ul li {
     border-top: none;
     margin-bottom: 1rem;
     padding: 0 1rem;
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-font-size-s);
 }
 
 main .toc.block ul li:last-child {
@@ -160,5 +160,9 @@ main .section:not([id='']) {
 
     main .section.toc-container {
         padding: 30px 24px;
+    }
+
+    main .section.toc-container > div {
+        max-width: 1400px;
     }
 }
