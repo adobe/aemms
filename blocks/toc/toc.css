@@ -150,6 +150,7 @@ main .section:not([id='']) {
         display: block;
         width: 100%;
         position: fixed;
+        border-bottom: 6px solid var(--toc-container-border);
     }
 }
 

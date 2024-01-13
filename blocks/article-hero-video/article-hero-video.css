@@ -76,6 +76,7 @@ div.article-hero-video-container {
     background: #222;
     height: 100%;
     overflow: hidden;
+    border-bottom: 6px solid var(--toc-container-border);
   }
   
   .article-hero-video img.fallback-image {
