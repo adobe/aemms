@@ -171,6 +171,16 @@ async function loadPage() {
   loadDelayed();
 }
 
+export function getYoutubeVideoId(url) {
+  if (url.includes('youtube.com/watch?v=')) {
+    return new URL(url).searchParams.get('v');
+  }
+  if (url.includes('youtube.com/embed/') || url.includes('youtu.be/')) {
+    return new URL(url).pathname.split('/').pop();
+  }
+  return null;
+}
+
 export function cropString(inputString, maxLength) {
   if (inputString.length <= maxLength) {
     return inputString;
@@ -198,6 +208,21 @@ export function cropString(inputString, maxLength) {
   }
 
   return croppedString;
+}
+
+export async function loadScript(url, attrs = {}) {
+  const script = document.createElement('script');
+  script.src = url;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [name, value] of Object.entries(attrs)) {
+    script.setAttribute(name, value);
+  }
+  const loadingPromise = new Promise((resolve, reject) => {
+    script.onload = resolve;
+    script.onerror = reject;
+  });
+  document.head.append(script);
+  return loadingPromise;
 }
 
 loadPage();
