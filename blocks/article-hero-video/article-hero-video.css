@@ -30,7 +30,7 @@ div.article-hero-video-container {
   .article-hero-video div.title-container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
     width: auto;
     height: auto;
@@ -41,8 +41,8 @@ div.article-hero-video-container {
   }
   
   .article-hero-video h1.article-hero-video-title {
-    font-size: 6vw;
-    line-height: 1;
+    font-size: 5vw;
+    line-height: 1.5;
     font-weight: 100;
     margin-top: 0;
     letter-spacing: 1px;
@@ -121,6 +121,15 @@ div.article-hero-video-container {
   
   @media screen and (min-width: 1200px) {
     .article-hero-video div.title-container {
-      min-width: 65%;
+        position: absolute;
+        top: 80%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 65%;
+        padding: 0;
+        margin: 0;
+        color: #fff;
     }
   }
