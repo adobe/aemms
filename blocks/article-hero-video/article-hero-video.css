@@ -131,5 +131,6 @@ div.article-hero-video-container {
         padding: 0;
         margin: 0;
         color: #fff;
+        text-shadow: 2px 2px black;
     }
   }
