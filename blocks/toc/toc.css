@@ -151,6 +151,7 @@ main .section:not([id='']) {
         width: 100%;
         position: fixed;
         border-bottom: 6px solid var(--toc-container-border);
+        opacity: 0.8;
     }
 }
 
