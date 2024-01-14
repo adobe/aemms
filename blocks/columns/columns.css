@@ -85,14 +85,14 @@ governing permissions and limitations under the License.
     font-size: var(--h3-font-size-mobile);
   }
   
-  .columns.history h6 {
+  .columns.special h6 {
     color: var(--transparent-grey-color-2);
     font-size: var(--heading-font-size-mxs);
     font-weight: var(--font-weight-medium);
     margin: 0 0 1rem;
   }
   
-  .columns.history strong {
+  .columns.special strong {
     font-size: var(--heading-font-size-ms);
   }
   
@@ -100,7 +100,7 @@ governing permissions and limitations under the License.
     padding: 0;
   }
   
-  .columns.history > div {
+  .columns.special > div {
     align-items: center;
   }
   
@@ -152,7 +152,7 @@ governing permissions and limitations under the License.
     margin-top: 0;
   }
   
-  .columns.history h2 {
+  .columns.special h2 {
     border-bottom: 1px solid var(--primary);
     margin-inline: 0;
     margin-bottom: 1rem;
@@ -169,21 +169,21 @@ governing permissions and limitations under the License.
     margin: 0 1rem;
   }
   
-  .columns.top-down {
+  .columns.text-top-links-below {
     margin: 40px 0 0;
   }
   
-  .columns.top-down > div {
+  .columns.text-top-links-below > div {
     align-items: flex-start;
     gap: 1rem;
   }
   
-  .columns.top-down.columns-2-cols {
+  .columns.text-top-links-below.columns-2-cols {
     max-width: 900px;
     margin: auto;
   }
   
-  .columns.top-down.columns-3-cols {
+  .columns.text-top-links-below.columns-3-cols {
     max-width: 1200px;
   }
   
@@ -238,7 +238,7 @@ governing permissions and limitations under the License.
     margin-bottom: 4rem;
   }
   
-  .columns.history.invert-image-order-in-narrow-view > div,
+  .columns.special.invert-image-order-in-narrow-view > div,
   .columns.invert-even-col-in-narrow-view > div:nth-child(even) {
     flex-direction: column-reverse;
   }
@@ -279,11 +279,11 @@ governing permissions and limitations under the License.
     position: relative;
   }
   
-  .columns.top-down.collapse {
+  .columns.text-top-links-below.collapse {
     margin: 0;
   }
   
-  .columns.top-down.collapse > div {
+  .columns.text-top-links-below.collapse > div {
     gap: 0;
   }
   
@@ -313,7 +313,7 @@ governing permissions and limitations under the License.
     object-fit: cover;
   }
   
-  .columns :not(.history) :not(.no-padding) > div div.non-singleton-img {
+  .columns :not(.special) :not(.no-padding) > div div.non-singleton-img {
     margin: 0 1rem;
   }
   
@@ -328,8 +328,8 @@ governing permissions and limitations under the License.
   }
   
   /* both autoblocking options for bottom caption */
-  .columns.history div.image-collage.autoblocked picture ~ em,
-  .columns.history div.image-collage.autoblocked picture ~ p {
+  .columns.special div.image-collage.autoblocked picture ~ em,
+  .columns.special div.image-collage.autoblocked picture ~ p {
     color: var(--steel-blue);
     font-size: var(--body-font-size-s);
     margin: 1rem 0;
@@ -337,10 +337,10 @@ governing permissions and limitations under the License.
   }
   
   
-  .columns.history
+  .columns.special
     div.image-collage.autoblocked
     div.text-col:last-of-type,
-  .columns.history
+  .columns.special
     div.image-collage.autoblocked
     div.img-col:last-of-type {
     margin-top: 2rem;
@@ -349,11 +349,11 @@ governing permissions and limitations under the License.
   }
   
   
-  .columns.history
+  .columns.special
     div.image-collage.autoblocked
     div.text-col:last-of-type
     picture,
-  .columns.history
+  .columns.special
     div.image-collage.autoblocked
     div.img-col:last-of-type
     picture {
@@ -365,12 +365,12 @@ governing permissions and limitations under the License.
   }
   
   @media (min-width: 62rem) {
-    .columns.top-down.collapse > div {
+    .columns.text-top-links-below.collapse > div {
       gap: 1.5rem;
     }
   }
   
-  .columns.collapse.top-down.columns-2-cols {
+  .columns.collapse.text-top-links-below.columns-2-cols {
     max-width: 100%;
   }
   
@@ -511,16 +511,16 @@ governing permissions and limitations under the License.
       margin-bottom: 0;
     }
   
-    .columns.history picture {
+    .columns.special picture {
       margin: 0 auto 2rem;
     }
   
-    .columns.history picture:last-child {
+    .columns.special picture:last-child {
       margin: 0 auto;
     }
   
     /* picture in column with text */
-    .columns.history p ~ div > div.image-collage.autoblocked picture {
+    .columns.special p ~ div > div.image-collage.autoblocked picture {
       display: table;
       width: 100%;
     }
@@ -542,7 +542,7 @@ governing permissions and limitations under the License.
       order: unset;
     }
   
-    .columns.history > div {
+    .columns.special > div {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
@@ -563,7 +563,7 @@ governing permissions and limitations under the License.
       display: none;
     }
   
-    .columns:not(.history, .text-and-image-in-column) .text-col-wrapper img:not(.video-modal) {
+    .columns:not(.special, .text-and-image-in-column) .text-col-wrapper img:not(.video-modal) {
       height: 3.125rem;
       width: unset;
     }
@@ -634,7 +634,7 @@ governing permissions and limitations under the License.
       margin-right: 1rem;
     }
   
-    main .columns.history.invert-image-order-in-narrow-view > div,
+    main .columns.special.invert-image-order-in-narrow-view > div,
     main .columns.invert-even-col-in-narrow-view > div:nth-child(even) {
       flex-direction: row;
     }
@@ -644,7 +644,7 @@ governing permissions and limitations under the License.
       width: 337px;
     }
   
-    .columns:not(.no-padding, .history) > div > div:not(.columns-img-col) div:not(.img-col) {
+    .columns:not(.no-padding, .special) > div > div:not(.columns-img-col) div:not(.img-col) {
       padding: 1rem 0;
     }
   
