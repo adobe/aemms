@@ -60,3 +60,5 @@
     margin: 0;
     color: blue;
 }
+
+.collapsible h3 { font-size: var(--heading-font-size-s) }
