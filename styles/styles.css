@@ -70,6 +70,7 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+
   --grid-desktop-container-width: 1200px;
 
   /* Spacing (Consonant) */
