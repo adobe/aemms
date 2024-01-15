@@ -76,7 +76,7 @@ main .hero img {
 @media (min-width: 900px) {
     .cae .hero h1 {
         font-size: 2em;
-        padding-top: 50px;
+        padding-top: 10px;
     }
 
     .cae .hero h2 {
@@ -84,6 +84,6 @@ main .hero img {
     }
 
     main .hero {
-        min-height: 250px;
+        min-height: 200px;
     }
 }
