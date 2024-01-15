@@ -257,22 +257,6 @@ async function loadLazy(doc) {
   sampleRUM.observe(main.querySelectorAll('picture > img'));
 }
 
-/**
- * loads everything that happens a lot later, without impacting
- * the user experience.
- */
-function loadDelayed() {
-  // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
-}
-
-async function loadPage() {
-  await loadEager(document);
-  await loadLazy(document);
-  loadDelayed();
-}
-
 export function getYoutubeVideoId(url) {
   if (url.includes('youtube.com/watch?v=')) {
     return new URL(url).searchParams.get('v');
@@ -325,6 +309,22 @@ export async function loadScript(url, attrs = {}) {
   });
   document.head.append(script);
   return loadingPromise;
+}
+
+/**
+ * loads everything that happens a lot later, without impacting
+ * the user experience.
+ */
+ function loadDelayed() {
+  // eslint-disable-next-line import/no-cycle
+  window.setTimeout(() => import('./delayed.js'), 3000);
+  // load anything that can be postponed to the latest here
+}
+
+async function loadPage() {
+  await loadEager(document);
+  await loadLazy(document);
+  loadDelayed();
 }
 
 loadPage();
