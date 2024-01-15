@@ -80,7 +80,7 @@ function decorateSectionsWithBackgrounds(element) {
 /**
  * load fonts.css and set a session storage flag
  */
- async function loadFonts() {
+async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
@@ -221,7 +221,7 @@ export function decorateMain(main) {
 /**
  * loads everything needed to get to LCP.
  */
- async function loadEager(doc) {
+async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -337,7 +337,7 @@ export async function loadScript(url, attrs = {}) {
  * loads everything that happens a lot later, without impacting
  * the user experience.
  */
- function loadDelayed() {
+function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
