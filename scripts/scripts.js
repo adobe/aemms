@@ -30,13 +30,60 @@ window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information 
 
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
+  const h2 = main.querySelector('h2');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    section.append(buildBlock('hero', { elems: [picture, h1, h2] }));
     main.prepend(section);
   }
+}
+
+function buildTocBlock(main) {
+  const tocContainer = document.createElement('div');
+  tocContainer.classList.add('toc-container');
+
+  const tocWrapper = document.createElement('div');
+  tocWrapper.classList.add('toc-wrapper');
+
+  const toc = document.createElement('div');
+  toc.classList.add('toc');
+
+  tocWrapper.appendChild(toc);
+  tocContainer.appendChild(tocWrapper);
+
+  const heroContainer = document.querySelector('.hero-container');
+
+  if (heroContainer) {
+    main.insertBefore(tocContainer, heroContainer.nextSibling);
+    // heroContainer.insertAdjacentElement('afterend', tocContainer);
+  }
+
+  const sections = document.querySelectorAll('.section:not(.hero-container)');
+
+  sections.forEach((section) => {
+    const h2 = section.querySelector('h2');
+
+    if (h2) {
+      const button = document.createElement('p');
+      button.classList.add('button-container');
+
+      const link = document.createElement('a');
+
+      let textContent = '';
+      h2.childNodes.forEach((node) => {
+        if (node.nodeType === 3) {
+          textContent += node.textContent;
+        } else if (node.nodeType === 1 && node.tagName.toLowerCase() !== 'a') {
+          textContent += node.innerText;
+        }
+      });
+      link.textContent = textContent.trim();
+      button.appendChild(link);
+      toc.appendChild(button);
+    }
+  });
 }
 
 /**
@@ -52,6 +99,58 @@ function buildAutoBlocks(main) {
   }
 }
 
+// export function createLinks(main) {
+//   const headings = main.querySelectorAll('.cae h2:not(.hero-container h2)');
+
+//   headings.forEach((heading) => {
+//     const headingId = heading.id;
+//     heading.setAttribute('id', headingId);
+
+//     // Create a shareable link
+//     const shareableLink = document.createElement('a');
+//     shareableLink.href = `#${headingId}`;
+//     // shareableLink.innerHTML = '🔗';
+//     // shareableLink.innerHTML = '#';
+//     // shareableLink.style.marginLeft = '10px';
+//     // shareableLink.style.marginRight = '20px';
+
+//     // Append the shareable link after the heading
+//     heading.insertBefore(shareableLink, heading.firstChild);
+//   });
+// }
+
+function initializeNavigation() {
+  const buttons = document.querySelectorAll('.cae main .toc-container .button-container');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      buttons.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      const sections = document.querySelectorAll('.cae main .section');
+      sections.forEach((section) => {
+        section.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      const selectedSection = document.querySelector(`.cae main .toc-container ~ .section:nth-child(${index + 3})`);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+    });
+  });
+
+  const firstSection = document.querySelector('.cae main .toc-container ~ .section:nth-child(3)');
+  if (firstSection) {
+    firstSection.classList.add('active');
+  }
+
+  const firstButton = document.querySelector('.cae main .toc-container .button-container');
+  if (firstButton) {
+    firstButton.classList.add('active');
+  }
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -64,6 +163,9 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // createLinks(main);
+  initializeNavigation();
+  buildTocBlock(main);
 }
 
 /**

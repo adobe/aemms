@@ -1,0 +1,319 @@
+/*
+Copyright 2022 Adobe. All rights reserved.
+This file is licensed to you under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License. You may obtain a copy
+of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under
+the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+OF ANY KIND, either express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+*/
+
+.tiles {
+    text-align: left;
+  }
+  
+  .tiles.tall h3,
+  .tiles.tall p {
+    color: black;
+  }
+
+  .tiles .tiles-image img {
+    max-width: 100%;
+  }
+  
+  .tiles.center-image-small > div {
+    padding: 0;
+  }
+  
+  .tiles.contained > div {
+    margin: 0 auto;
+    padding: 24px 0;
+    display: grid;
+    justify-content: center;
+  }
+  
+  .tiles.contained > div > div {
+    margin-bottom: 24px;
+  }
+  
+  .tiles.single-grid > div > div {
+    margin-bottom: 0;
+  }
+  
+  .tiles.tall > div > div {
+    padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
+    background: var(--bg-color-lightgrey);
+    border-radius: var(--card-border-radius-l);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tiles.three.contained > div {
+    padding: var(--spacing-ml) 0;
+  }
+  
+  .tiles.four.contained > div {
+    gap: var(--spacing-s);
+  }
+  
+  /* contained */
+  .tiles.contained img {
+    filter: var(--image-filter-drop-shadow-small);
+  }
+  
+  .tiles.contained img,
+  .tiles.contained:not(.icon-sm) svg {
+    display: inline-block;
+  }
+  
+  .tiles.contained.icon-sm svg {
+    display: inline-block;
+  }
+  
+  /* text-sm */
+  .tiles.text-sm p {
+    font-size: var(--type-body-xs-size);
+    line-height: var(--type-body-xxs-lh);
+  }
+  
+  /* - .tall - 3 card section  - */
+  .tiles.tall .tiles-image .image-wrapper-el {
+    margin-top: auto;
+    padding-top: var(--spacing-s);
+  }
+  
+  .tiles.tall h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--type-heading-xl-size);
+    line-height: var(--type-heading-xl-lh);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  
+  .tiles.tall p {
+    font-size: var(--type-body-s-size);
+    line-height: var(--type-body-s-lh);
+  }
+  
+  .tiles.tall img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: contain;
+  }
+  
+  .tiles.tall .colored-tag.number-tag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  /* .center-image-small, adjust image size on sidekick extension page */
+  .tiles.center-image-small > div > div:last-of-type {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tiles.center-image-small > div > div:last-of-type picture {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tiles.center-image-small > div > div:last-of-type img {
+    width: 70%;
+    max-width: 360px;
+    filter: none;
+  }
+  
+  .tiles.three.contained:not(.tall) > div {
+    text-align: center;
+  }
+  
+  .tiles.contained > div > div > p:first-of-type {
+    margin: 0;
+  }
+  
+  .tiles.four.contained .tiles-content-wrapper p {
+    margin-bottom: 0;
+  }
+  
+  .tiles.colored-icon h3 {
+    font-weight: 700;
+    font-size: var(--type-heading-s-size);
+    line-height: var(--type-heading-s-lh);
+  }
+  
+  /* center */
+  .tiles.center .tiles-content-wrapper {
+    text-align: center;
+    background-color: grey;
+  }
+  
+  .tiles.center .tiles-content-wrapper .icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  main.without-full-width-hero .section.content .tiles-wrapper {
+    margin-top: var(--spacing-m);
+  }
+  
+  @media screen and (min-width: 768px) {
+    /* tall cards */
+    .tiles.tall > div > div {
+      padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
+      text-align: center;
+    }
+  
+    .tiles.tall h3 {
+      font-size: var(--type-heading-s-size);
+      line-height: var(--type-heading-s-lh);
+    }
+  
+    .tiles.tall p {
+      font-size: var(--type-body-s-size);
+      line-height: var(--type-body-xs-lh);
+    }
+  
+    .tiles.tall .colored-tag.number-tag {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    /* contained */
+    .tiles.contained .tiles-content-wrapper p {
+      margin-bottom: 1em;
+    }
+  
+    /* adapt for 3 column layout in redesign for 4-tiles - Start */
+    .tiles.four.contained > div {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+  
+    .tiles.four.contained .tiles-content-wrapper p {
+      margin-top: var(--spacing-xxs);
+    }
+  
+    .tiles.four.contained > div > div {
+      grid-column: span 2;
+    }
+  
+    .tiles.three.tall.contained > div {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: var(--spacing-xs);
+    }
+  
+    /* Dealing with 2 orphan items */
+    .tiles.four.contained > div > div:last-child:nth-child(3n - 1) {
+      grid-column-end: -2;
+    }
+  
+    .tiles.four.contained > div > div:nth-last-child(2):nth-child(3n + 1) {
+      grid-column-end: 4;
+    }
+  
+    /* Dealing with single orphan */
+    .tiles.four.contained > div > div:last-child:nth-child(3n - 2) {
+      grid-column-end: 5;
+    }
+  
+    /* adapt for 3 column layout in redesign for 4-tiles - End */
+  }
+  
+  @media screen and (min-width: 900px) {
+    .tiles-wrapper {
+      margin: var(--spacing-xl) 0 0;
+    }
+  
+    .tiles.contained > div > div {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    /* tall */
+    .tiles.tall h3 {
+      margin-bottom: var(--spacing-s);
+      font-size: var(--type-heading-m-size);
+      line-height: var(--type-heading-m-lh);
+    }
+  
+    .tiles.tall .tiles-image .image-wrapper-el {
+      padding-top: var(--spacing-l);
+      margin-bottom: 0;
+    }
+  
+    .tiles.tall > div > div {
+      padding: var(--spacing-m) var(--spacing-s);
+      margin-bottom: var(--spacing-s);
+    }
+  
+    /* .tiles.tall.contained > div {
+      grid-gap: 32px;
+    } */
+  
+    /* force image to stick to bottom */
+    .tiles.tall > div > div > p {
+      flex: 1;
+      font-size: var(--type-body-s-size);
+      line-height: var(--type-body-s-lh);
+    }
+  
+    /* others */
+    .tiles.two.contained > div {
+      /* max-width: 1200px; */
+      grid-template-columns: 45% 45%;
+      grid-gap: var(--spacing-xs);
+      margin: 0 auto;
+    }
+  
+    .tiles.three.contained > div {
+      max-width: var(--grid-desktop-container-width);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: var(--spacing-xxl);
+    }
+  
+    .tiles.four.contained > div {
+      max-width: var(--grid-desktop-container-width);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: var(--spacing-xl) var(--spacing-s);
+      padding-top: 0;
+    }
+  
+    .tiles.four.contained > div > div {
+      grid-column: span 1;
+    }
+  
+    .tiles.three.tall.contained > div {
+      grid-gap: var(--spacing-m);
+      padding: var(--spacing-xs) 0;
+    }
+  
+    /* cancel off previous effect */
+    .tiles.four.contained > div > div:last-child:nth-child(3n - 1),
+    .tiles.four.contained > div > div:nth-last-child(2):nth-child(3n + 1),
+    .tiles.four.contained > div > div:last-child:nth-child(3n - 2) {
+      grid-column-end: auto;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .tiles.colored-icon h3 {
+      line-height: 1;
+    }
+  
+    .tiles.tall h3 {
+      font-size: var(--type-heading-l-size);
+      line-height: var(--type-heading-l-lh);
+    }
+  
+    .tiles.tall > div > div {
+      padding: var(--spacing-m) var(--spacing-m);
+    }
+  }

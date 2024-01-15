@@ -11,9 +11,10 @@ governing permissions and limitations under the License.
 */
 
 footer {
-  padding: 2rem;
+  padding: 0.5rem;
   background-color: var(--overlay-background-color);
   font-size: var(--body-font-size-xs);
+  color: black
 }
 
 footer .footer {
@@ -27,5 +28,5 @@ footer .footer p {
 }
 
 footer .footer p:first-child {
-  padding-top: 50px;
+  padding-top: 20px;
 }
