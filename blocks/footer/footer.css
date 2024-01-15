@@ -14,7 +14,7 @@ footer {
   padding: 0.5rem;
   background-color: var(--overlay-background-color);
   font-size: var(--body-font-size-xs);
-  color: black
+  color: black;
 }
 
 footer .footer {
@@ -29,4 +29,9 @@ footer .footer p {
 
 footer .footer p:first-child {
   padding-top: 0;
+}
+
+.cae footer {
+  background-color: snow;
+  border-top: 0.5px solid grey;
 }

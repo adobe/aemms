@@ -1,0 +1,173 @@
+/* stylelint-disable media-feature-range-notation */
+.block.quote {
+    border-left: 0.25rem solid var(--black);
+    margin-bottom: 5rem;
+    margin-top: 6vh;
+    padding-left: 2rem;
+    color: var(--primary);
+    position: absolute;
+    left: 35vw;
+    font-size: var(--body-font-size-xs);
+  }
+  
+  .block.quote.white {
+    color: var(--white);
+  }
+  
+  .block.quote.no-border {
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .block.quote .quote-content {
+    margin-bottom: 1.5rem;
+  }
+  
+  .block.quote::before {
+    content: "“";
+    font-family: var(--font-family-body);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: inherit;
+    position: absolute;
+    top: -1.5rem;
+  }
+  
+  .block.quote::after {
+    content: "”";
+    font-family: var(--font-family-body);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: inherit;
+    position: absolute;
+    bottom: -1.5rem;
+    right: 0;
+  }
+  
+  .block.quote .quote-caption {
+    color: var(--gray);
+    font-size: 0.8125rem;
+    position: relative;
+    font-style: normal;
+  }
+  
+  /* Column Quote */
+  
+  .block.quote.column {
+    display: flex;
+    border: none;
+    flex-direction: column;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .block.quote.column::before , .block.quote.column::after {
+    content: none;
+  }
+  
+  .block.quote.column .quote-content {
+    position: relative;
+  }
+  
+  .block.quote.column .quote-content::before, .block.quote.column .quote-content::after {
+    width: 47px;
+    height: 36px;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+  }
+  
+  .block.quote.column .quote-content::before {
+    background-image: url("/assets/quate-top-2x.png");
+    top: 0;
+    left: -32px;
+  }
+  
+  .block.quote.column .quote-content::after {
+    background-image: url("/assets/quate-bottom-2x.png");
+    bottom: 0;
+    right: 0;
+  }
+  
+  .block.quote.column.gray-icon .quote-content::before {
+    background-image: url("/assets/quate-top-gray-2x.png");
+    top: 0;
+    left: -32px;
+  }
+  
+  .block.quote.column.gray-icon .quote-content::after {
+    background-image: url("/assets/quate-bottom-gray-2x.png");
+    bottom: 0;
+    right: 0;
+  }
+  
+  .block.quote h1 {
+    line-height: 1;
+    font-weight: 550;
+    font-size: var(--heading-font-size-s);
+  }
+
+  @media (min-width: 62rem) {
+    .block.quote::before {
+      content: "“";
+      font-family: var(--font-family-body);
+      font-size: 5.5rem;
+      line-height: 1;
+      color: inherit;
+      position: absolute;
+      top: -3.75rem;
+    }
+
+    .block.quote::after {
+      content: "”";
+      font-family: var(--font-family-body);
+      font-size: 5.5rem;
+      line-height: 1;
+      color: inherit;
+      position: absolute;
+      bottom: -5.25rem;
+      right: 0;
+    }
+
+    .block.quote {
+      border-left: 0.25rem solid var(--black);
+      margin-bottom: 5rem;
+      margin-top: 30vh;
+      padding-left: 2rem;
+      color: var(--primary);
+      position: absolute;
+      left: 45vw;
+      font-size: var(--body-font-size-xs);
+    }
+
+    .block.quote h1 {
+      line-height: 1;
+      font-weight: 550;
+      font-size: var(--heading-font-size-m);
+    }
+
+  }
+  
+    @media (min-width: 77rem) {
+      .block.quote {
+        border-left: 0.25rem solid var(--black);
+        margin-bottom: 5rem;
+        margin-top: 30vh;
+        padding-left: 2rem;
+        color: var(--primary);
+        position: absolute;
+        left: 55vw;
+      }
+
+      .block.quote h1 {
+        line-height: 1;
+        font-weight: 550;
+        font-size: var(--heading-font-size-xxl);
+      }
+  
+      .block.quote.column {
+        flex-direction: row;
+      }
+    }

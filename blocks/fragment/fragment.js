@@ -13,10 +13,11 @@ import {
 } from '../../scripts/lib-franklin.js';
 
 /**
-   * Loads a fragment.
-   * @param {string} path The path to the fragment
-   * @returns {HTMLElement} The root element of the fragment
-   */
+ * Loads a fragment.
+ * @param {string} path The path to the fragment
+ * @returns {HTMLElement} The root element of the fragment
+ */
+
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
     const resp = await fetch(`${path}.plain.html`);

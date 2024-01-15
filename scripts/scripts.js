@@ -23,6 +23,7 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  createOptimizedPicture,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -37,6 +38,54 @@ function buildHeroBlock(main) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1, h2] }));
     main.prepend(section);
+  }
+}
+
+function decorateSectionsWithBackgrounds(element) {
+  const sections = element.querySelectorAll(`.section[data-bg-image],
+  .section[data-bg-image-desktop],
+  .section[data-bg-image-mobile],
+  .section[data-bg-image-tablet]`);
+  sections.forEach((section) => {
+    const bgImage = section.getAttribute('data-bg-image');
+    const bgImageDesktop = section.getAttribute('data-bg-image-desktop');
+    const bgImageMobile = section.getAttribute('data-bg-image-mobile');
+    const bgImageTablet = section.getAttribute('data-bg-image-tablet');
+    const viewPort = window.deviceType;
+    let background;
+    switch (viewPort) {
+      case 'Mobile':
+        background = bgImageMobile || bgImageTablet || bgImageDesktop || bgImage;
+        break;
+      case 'Tablet':
+        background = bgImageTablet || bgImageDesktop || bgImage || bgImageMobile;
+        break;
+      default:
+        background = bgImageDesktop || bgImage || bgImageTablet || bgImageMobile;
+        break;
+    }
+    if (background) {
+      if (section.classList.contains('with-static-background-image')) {
+        section.classList.add('with-static-background-image');
+      } else {
+        section.classList.add('with-background-image');
+      }
+      const backgroundPic = createOptimizedPicture(background);
+      backgroundPic.classList.add('background-image');
+      section.append(backgroundPic);
+    }
+  });
+}
+
+/**
+ * load fonts.css and set a session storage flag
+ */
+async function loadFonts() {
+  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
+  try {
+    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
+  } catch (e) {
+    // do nothing
   }
 }
 
@@ -163,6 +212,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateSectionsWithBackgrounds(main);
   // createLinks(main);
   initializeNavigation();
   buildTocBlock(main);
@@ -177,7 +227,17 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
+  }
+
+  try {
+    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
+    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+      loadFonts();
+    }
+  } catch (e) {
+    // do nothing
   }
 }
 
@@ -217,6 +277,60 @@ async function loadLazy(doc) {
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
+}
+
+export function getYoutubeVideoId(url) {
+  if (url.includes('youtube.com/watch?v=')) {
+    return new URL(url).searchParams.get('v');
+  }
+  if (url.includes('youtube.com/embed/') || url.includes('youtu.be/')) {
+    return new URL(url).pathname.split('/').pop();
+  }
+  return null;
+}
+
+export function cropString(inputString, maxLength) {
+  if (inputString.length <= maxLength) {
+    return inputString;
+  }
+
+  const words = inputString.split(/\s+/); // Split the string into words
+  let croppedString = '';
+  let currentLength = 0;
+
+  words.every((word) => {
+    if (currentLength + word.length + 1 <= maxLength) {
+      // Add the word and a space if it doesn't exceed the maxLength
+      croppedString += `${word} `;
+      currentLength += word.length + 1;
+      return true;
+    }
+    // Otherwise, stop the loop
+    return false;
+  });
+
+  // Remove trailing space and add an ellipsis if needed
+  croppedString = croppedString.trim();
+  if (croppedString.length < inputString.length) {
+    croppedString += '...';
+  }
+
+  return croppedString;
+}
+
+export async function loadScript(url, attrs = {}) {
+  const script = document.createElement('script');
+  script.src = url;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [name, value] of Object.entries(attrs)) {
+    script.setAttribute(name, value);
+  }
+  const loadingPromise = new Promise((resolve, reject) => {
+    script.onload = resolve;
+    script.onerror = reject;
+  });
+  document.head.append(script);
+  return loadingPromise;
 }
 
 /**
