@@ -728,9 +728,10 @@ main .toc p {
     top: 1%;
   }
 
-  main .toc {
+  .cae main .toc {
     display: flex;
     justify-content: space-around;
+    border-bottom: 1px solid #979797;
   }
 
   main .toc p {
