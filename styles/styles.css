@@ -70,6 +70,155 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  --grid-desktop-container-width: 1200px;
+
+  /* Spacing (Consonant) */
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-s: 24px;
+  --spacing-m: 32px;
+  --spacing-ml: 40px;
+  --spacing-l: 48px;
+  --spacing-xl: 56px;
+  --spacing-xxl: 80px;
+  --spacing-xxxl: 104px;
+
+  /* background colors */
+  --bg-color-lightgrey: #f8f8f8;
+
+  /* Border-radius */
+  --card-border-radius-l: 12px;
+
+  /* colorful tags */
+  --circular-icon-tag-size: 30px;
+  --circular-number-tag-size: 60px;
+
+  /* drop-shadow */
+  --image-filter-drop-shadow-small: drop-shadow(10px 25px 50px rgba(0 0 0 / 10%));
+
+  /* Headings (Consonant) */
+  --type-heading-all-weight: 700;
+  --type-heading-xxxl-size: 44px;
+  --type-heading-xxxl-lh: 1;
+  --type-heading-xxl-size: 36px;
+  --type-heading-xxl-lh: 1;
+  --type-heading-xl-size: 28px;
+  --type-heading-xl-lh: 35px;
+  --type-heading-l-size: 24px;
+  --type-heading-l-lh: 30px;
+  --type-heading-m-size: 20px;
+  --type-heading-m-lh: 25px;
+  --type-heading-s-size: 16px;
+  --type-heading-s-lh: 20px;
+  --type-heading-xs-size: 18px;
+  --type-heading-xs-lh: 22px;
+
+  /* Body (Consonant) */
+  --type-body-l-size: 20px;
+  --type-body-l-lh: 30px;
+  --type-body-m-size: 18px;
+  --type-body-m-lh: 27px;
+  --type-body-s-size: 16px;
+  --type-body-s-lh: 1.5;
+  --type-body-xs-size: 14px;
+  --type-body-xs-lh: 21px;
+  --type-body-xxs-size: 12px;
+  --type-body-xxs-lh: 1.5;
+  --type-body-xxxs-lh: 15px;
+
+  /* Redesign colors */
+  --color-font-grey: #2c2c2c;
+  --color-light-grey-600: #686868;
+  --color-eyebrow-light-grey: #444;
+  --color-eyebrow-highlight: #6870ec;
+  --color-accent-blue: #6870ec;
+  --color-accent-highlight-yellow: #e3fa8c;
+  --color-accent-pink-bg: #f0b2f2;
+  --color-accent-pink-content: #88008d;
+  --color-accent-purple-bg: #474eb8;
+  --color-accent-purple-content: #e2e4ff;
+  --color-accent-lightgreen-bg: #e1fa82;
+  --color-accent-lightgreen-content: #3b5700;
+  --color-accent-yellow-bg: #f5e66b;
+  --color-accent-yellow-content: #7f6000;
+
+  /* -- colored tags -- */
+  .colored-tag {
+    display: inline-block;
+    font-size: var(--type-body-xs-size);
+    line-height: var(--type-body-xs-lh);
+    padding: 4px 8px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+
+  /* colored tags: circle icon */
+  .colored-tag.circle {
+    width: var(--circular-icon-tag-size);
+    height: var(--circular-icon-tag-size);
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+
+  .colored-tag.circle svg {
+    width: 40%;
+    height: 40%;
+  }
+
+  /* colored tags: circle number */
+  .colored-tag.number-tag {
+    width: var(--circular-number-tag-size);
+    height: var(--circular-number-tag-size);
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    font-size: var(--type-heading-l-size);
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: rgb(0 0 0 / 7%) 0 100px 148px, rgb(0 0 0 / 5%) 0 42px 62px,
+      rgb(0 0 0 / 4%) 0 22px 33px, rgb(0 0 0 / 3.5%) 0 13px 19px,
+      rgb(0 0 0 / 3%) 0 7px 10px, rgb(0 0 0 / 2%) 0 3px 4px;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  /* colored tags: color variation */
+  .colored-tag.pink {
+    background-color: var(--color-accent-pink-bg);
+    color: var(--color-accent-pink-content);
+  }
+
+  .colored-tag.pink svg {
+    color: var(--color-accent-pink-content);
+  }
+
+  .colored-tag.purple {
+    background-color: var(--color-accent-purple-bg);
+    color: var(--color-accent-purple-content);
+  }
+
+  .colored-tag.lightgreen {
+    background-color: var(--color-accent-lightgreen-bg);
+    color: var(--color-accent-lightgreen-content);
+  }
+
+  .colored-tag.yellow {
+    background-color: var(--color-accent-yellow-bg);
+    color: var(--color-accent-yellow-content);
+  }
+
+  .colored-tag.black {
+    background-color: var(--color-black);
+  }
+
+  .colored-tag-description {
+    font-size: var(--type-body-xs-size);
+    line-height: var(--type-body-xs-lh);
+  }
 }
 
 body {
@@ -100,11 +249,11 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
+h1 { font-size: var(--heading-font-size-xl) }
+h2 { font-size: var(--heading-font-size-l) }
+h3 { font-size: var(--heading-font-size-m) }
+h4 { font-size: var(--heading-font-size-s) }
+h5 { font-size: var(--heading-font-size-xs) }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
@@ -193,6 +342,20 @@ main img {
   width: 24px;
 }
 
+body.cae.section:not(.hero-container) {
+  font-size: var(--body-font-size-xs);
+}
+
+@media (min-width: 600px) {
+  main .section {
+    padding: 64px 32px;
+  }  
+
+  body.cae {
+    font-size: var(--body-font-size-s);
+  }
+}
+
 .icon img {
   height: 100%;
   width: 100%;
@@ -254,8 +417,17 @@ main .section.color-primary {
   color: var(--primary);
 }
 
+.cae h2 {
+  color: lightsalmon;
+  margin-top: 0;
+}
+
 main .section.color-primary h1,  main .section.color-primary h2 {
   border-bottom: 1px solid var(--primary);
+}
+
+.cae .section:not(.hero-container) h2 {
+  padding-top: 40px;
 }
 
 /* section - narrow */
@@ -473,4 +645,108 @@ main .section.image-before-after-t1 {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+.cae h2 a {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.cae .section {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: none;
+}
+
+.cae {
+  background-color: #2e2e38;
+  color: whitesmoke;
+}
+
+.section.color-background {
+  background-color: snow;
+  color: black;
+}
+
+.cae .section.section:not(.hero-container) {
+  padding-bottom: 50px;
+}
+
+main .toc-container {
+  padding: 0;
+}
+
+.cae .toc-container,
+.cae .hero-container {
+  display: block; /* Or any other desired styling for these containers */
+}
+
+.cae .section.active {
+  display: block;
+}
+
+.toc .button-container.active {
+  border-bottom: 3px solid red;
+  color: lightcoral;
+}
+
+main .toc-wrapper {
+  opacity: 1;
+}
+
+main .toc {
+  font-size: 15px;
+  text-align: center;
+}
+
+main .toc a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-weight: bold; 
+}
+
+main .toc a:hover {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+main .toc p {
+  border-bottom: 1px solid #979797;
+}
+
+@media (min-width: 600px) {
+  main .toc-wrapper {
+    margin: 0;
+    max-width: 100%;
+    top: 1%;
+    border-bottom: 1px solid #979797;
+  }
+
+  main .toc {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main .toc p {
+    font-size: 16px;
+    width: 100%;
+    border-left: 1px solid #979797;
+    height: 30px;
+    margin: 0;
+    text-align: center;
+    padding: 14px;
+    border-bottom: none;
+  }
+
+  main .toc p:hover {
+    background: #484747;
+    color: white;
+    cursor: pointer;
+  }
 }

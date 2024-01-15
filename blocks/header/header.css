@@ -6,6 +6,10 @@ header .nav-wrapper {
   position: fixed;
 }
 
+.cae header {
+  display: none;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
