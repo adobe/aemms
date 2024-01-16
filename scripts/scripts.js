@@ -80,14 +80,15 @@ function decorateSectionsWithBackgrounds(element) {
 /**
  * load fonts.css and set a session storage flag
  */
-async function loadFonts() {
-  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
-  try {
-    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
-  } catch (e) {
-    // do nothing
-  }
-}
+// async function loadFonts() {
+//   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
+//   try {
+// eslint-disable-next-line max-len
+//     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
+//   } catch (e) {
+//     // do nothing
+//   }
+// }
 
 function buildTocBlock(main) {
   const tocContainer = document.createElement('div');
@@ -200,6 +201,13 @@ function initializeNavigation() {
   }
 }
 
+export function decorateExternalLinks(main) {
+  main.querySelectorAll('a').forEach((a) => {
+    const isExternalLink = !a.getAttribute('href')?.startsWith('/');
+    if (isExternalLink) a.setAttribute('target', '_blank');
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -216,6 +224,7 @@ export function decorateMain(main) {
   // createLinks(main);
   initializeNavigation();
   buildTocBlock(main);
+  decorateExternalLinks(main);
 }
 
 /**
@@ -231,14 +240,14 @@ async function loadEager(doc) {
     await waitForLCP(LCP_BLOCKS);
   }
 
-  try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
-    }
-  } catch (e) {
-    // do nothing
-  }
+  // try {
+  //   /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
+  //   if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+  //     loadFonts();
+  //   }
+  // } catch (e) {
+  //   // do nothing
+  // }
 }
 
 /**
