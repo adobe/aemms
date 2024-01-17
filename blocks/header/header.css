@@ -183,6 +183,10 @@ header .nav-brand {
   line-height: 1;
 }
 
+.default-nav header .nav-brand {
+  flex-basis: 400px;
+}
+
 .logo-nav header .nav-brand {
   flex-basis: 428px;
   color: var(--secondary);
