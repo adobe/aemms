@@ -343,7 +343,7 @@ main img {
   width: 24px;
 }
 
-body.cae.section:not(.hero-container) {
+body.toc-layout.section:not(.hero-container) {
   font-size: var(--body-font-size-xs);
 }
 
@@ -352,7 +352,7 @@ body.cae.section:not(.hero-container) {
     padding: 64px 32px;
   }  
 
-  body.cae {
+  body.toc-layout {
     font-size: var(--body-font-size-s);
   }
 }
@@ -418,7 +418,7 @@ main .section.color-primary {
   color: var(--primary);
 }
 
-.cae h2 {
+.toc-layout h2 {
   color: lightsalmon;
   margin-top: 0;
 }
@@ -427,7 +427,7 @@ main .section.color-primary h1,  main .section.color-primary h2 {
   border-bottom: 1px solid var(--primary);
 }
 
-.cae .section:not(.hero-container) h2 {
+.toc-layout .section:not(.hero-container) h2 {
   padding-top: 40px;
 }
 
@@ -648,59 +648,54 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
-.cae h2 a {
+.toc-layout h2 a {
   font-size: 0.8em;
   text-decoration: none;
 }
 
-.cae .section {
-  padding-top: 0;
-  padding-bottom: 0;
+.toc-layout .section:not(header .section, .hero-container, main .active) {
   display: none;
 }
 
-.cae {
+.toc-layout {
   background-color: #2e2e38;
-  color: whitesmoke;
 }
 
-.section.color-background {
+.toc-layout .section.color-background {
   background-color: snow;
   color: black;
 }
 
-.cae .section.section:not(.hero-container) {
-  padding-bottom: 140px;
-}
-
-main .toc-container {
+.toc-layout .toc-container {
   padding: 0;
+  color: white;
 }
 
-.cae .toc-container,
-.cae .hero-container {
-  display: block; /* Or any other desired styling for these containers */
-}
-
-.cae .section.active {
+.toc-layout .toc-container,
+.toc-layout .hero-container {
   display: block;
 }
 
-.toc .button-container.active {
+.toc-layout .section.active {
+  display: block;
+  color: white;
+}
+
+.toc-layout .toc .button-container.active {
   border-bottom: 3px solid red;
   color: lightcoral;
 }
 
-main .toc-wrapper {
+.toc-layout .toc-wrapper {
   opacity: 1;
 }
 
-main .toc {
+.toc-layout .toc {
   font-size: 15px;
   text-align: center;
 }
 
-main .toc a {
+.toc-layout .toc a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -712,29 +707,29 @@ main .toc a {
   font-weight: bold; 
 }
 
-main .toc a:hover {
+.toc-layout .toc a:hover {
   color: goldenrod;
   text-decoration: none;
 }
 
-main .toc p {
+.toc-layout .toc p {
   border-bottom: 1px solid #979797;
 }
 
 @media (min-width: 600px) {
-  main .toc-wrapper {
+  .toc-layout .toc-wrapper {
     margin: 0;
     max-width: 100%;
     top: 1%;
   }
 
-  .cae main .toc {
+  .toc-layout main .toc {
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid #979797;
   }
 
-  main .toc p {
+  .toc-layout .toc p {
     font-size: 16px;
     width: 100%;
     border-left: 1px solid #979797;
@@ -745,7 +740,7 @@ main .toc p {
     border-bottom: none;
   }
 
-  main .toc p:hover {
+  .toc-layout .toc p:hover {
     background: #484747;
     color: white;
     cursor: pointer;

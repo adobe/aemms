@@ -90,7 +90,7 @@ function decorateSectionsWithBackgrounds(element) {
 //   }
 // }
 
-function buildTocBlock(main) {
+async function buildTocBlock(main) {
   const tocContainer = document.createElement('div');
   tocContainer.classList.add('toc-container');
 
@@ -170,32 +170,32 @@ function buildAutoBlocks(main) {
 // }
 
 function initializeNavigation() {
-  const buttons = document.querySelectorAll('.cae main .toc-container .button-container');
+  const buttons = document.querySelectorAll('.toc-layout main .toc-container .button-container');
 
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
       buttons.forEach((btn) => {
         btn.classList.remove('active');
       });
-      const sections = document.querySelectorAll('.cae main .section');
+      const sections = document.querySelectorAll('.toc-layout main .section');
       sections.forEach((section) => {
         section.classList.remove('active');
       });
 
       button.classList.add('active');
-      const selectedSection = document.querySelector(`.cae main .toc-container ~ .section:nth-child(${index + 3})`);
+      const selectedSection = document.querySelector(`.toc-layout main .toc-container ~ .section:nth-child(${index + 3})`);
       if (selectedSection) {
         selectedSection.classList.add('active');
       }
     });
   });
 
-  const firstSection = document.querySelector('.cae main .toc-container ~ .section:nth-child(3)');
+  const firstSection = document.querySelector('.toc-layout main .toc-container ~ .section:nth-child(3)');
   if (firstSection) {
     firstSection.classList.add('active');
   }
 
-  const firstButton = document.querySelector('.cae main .toc-container .button-container');
+  const firstButton = document.querySelector('.toc-layout main .toc-container .button-container');
   if (firstButton) {
     firstButton.classList.add('active');
   }

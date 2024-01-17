@@ -93,7 +93,13 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
+  const newNav = document.querySelector('.new-nav');
+  const logoNav = document.querySelector('.logo-nav');
+  let navPath = navMeta ? new URL(navMeta).pathname : '/nav';
+  if (newNav || logoNav) {
+    const folderName = window.location.pathname.split('/')[1]; // Get the folder name from the URL path
+    navPath = navMeta ? new URL(navMeta).pathname.replace('*', folderName) : `/${folderName}/nav`;
+  }
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM

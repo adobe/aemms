@@ -1,3 +1,14 @@
+/*
+Copyright 2022 Adobe. All rights reserved.
+This file is licensed to you under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License. You may obtain a copy
+of the License at http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software distributed under
+the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+OF ANY KIND, either express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+*/
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -6,7 +17,12 @@ header .nav-wrapper {
   position: fixed;
 }
 
-.cae header {
+.new-nav header .nav-wrapper {
+  background-color: #2e2e38;
+  color: whitesmoke;
+}
+
+.no-nav header {
   display: none;
 }
 
@@ -18,7 +34,7 @@ header nav {
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 2em;
-  margin: 0;
+  margin: auto;
   max-width: 1264px;
   height: var(--nav-height);
   padding: 0 1rem;
@@ -32,6 +48,10 @@ header nav[aria-expanded="true"] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100vh;
+}
+
+.new-nav header nav[aria-expanded="true"] {
+  color: whitesmoke;
 }
 
 @media (width >= 600px) {
@@ -55,13 +75,14 @@ header nav[aria-expanded="true"] {
 header nav p {
   margin: 0;
   line-height: 1;
-  display: flex;
-  gap: 15px;
-  color: var(--secondary);
 }
 
 header nav a:any-link {
-  color: var(--secondary);;
+  color: currentcolor;
+}
+
+.new-nav header nav[aria-expanded="true"] a:any-link {
+  color: whitesmoke;
 }
 
 /* hamburger */
@@ -83,6 +104,10 @@ header nav .nav-hamburger button {
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+}
+
+.new-nav header nav .nav-hamburger button {
+  background-color: #2e2e38;
 }
 
 header nav .nav-hamburger-icon,
@@ -143,19 +168,43 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     display: none;
     visibility: hidden;
   }
+
+  .new-nav header nav[aria-expanded="true"] a:any-link {
+    color: black;
+  }
 }
 
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 450px;
+  flex-basis: 128px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
+.logo-nav header .nav-brand {
+  flex-basis: 428px;
+  color: var(--secondary);
+}
+
+.logo-nav header nav {
+  padding-left: 0;
+  margin-left: 20px;
+}
+
 header nav .nav-brand img {
-  width: 25px;
+  width: 128px;
+  height: auto;
+}
+
+.logo-nav header nav p {
+  display: flex;
+  gap: 15px
+}
+
+.logo-nav header nav .nav-brand img {
+  width: 28px;
   height: auto;
 }
 
@@ -181,16 +230,28 @@ header nav .nav-sections ul  {
   font-weight: 500;
 }
 
+
 header nav .nav-sections ul > li {
   font-weight: 700;
+}
+
+header nav .nav-sections ul > li > ul > li {
+  font-weight: 500;
+}
+
+.new-nav header .nav-sections ul > li {
+  margin-right: 20px;
+  color: burlywood;
+  font-weight: bold;
 }
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 500;
+.new-nav header .nav-sections ul > li > ul > li {
+  color: black;
+  margin-left: 20px;
 }
 
 @media (width >= 900px) {
@@ -237,6 +298,10 @@ header nav .nav-sections ul > li > ul > li {
     font-size: var(--body-font-size-xs);
   }
 
+  .new-nav header .nav-sections ul > li {
+    color: whitesmoke;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
@@ -257,6 +322,14 @@ header nav .nav-sections ul > li > ul > li {
     padding: 1em;
     background-color: var(--light-color);
     white-space: initial;
+  }
+
+  .new-nav header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
+    width: 100px;
+    padding: 0.8em;
+    background-color: var(--light-color);
+    white-space: initial;
+    margin-top: 20px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
