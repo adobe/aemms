@@ -93,40 +93,34 @@ main .section .accordion-wrapper {
     padding-left: 3.125rem;
     margin-top: unset;
     margin-bottom: 0;
-  }
-  
-  .accordion-wrapper .accordion-section button::after {
-    right: auto;
-    left: 0.625rem;
-    color: var(--global-color-black);
-    font-size: 1.25rem;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--global-georgia-font-family);
-  }
-  
-  .accordion-wrapper .accordion-section button[aria-expanded="false"]::after {
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-    transform-origin: 25% 25%;
-    transform: rotate(45deg) translateY(-50%);
-    transition: transform .1s ease;
-    content: '';
+    width: 100%;
+    text-align: left;
   }
   
   .accordion-wrapper .accordion-section button[aria-expanded="true"]::after {
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-    transform-origin: 75% 75%;
-    transform: rotate(-45deg) translateY(-50%);
-    transition: transform .1s ease;
-    content: '';
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%) rotate(135deg);
+    width: 9px;
+    height: 9px;
+    border: 2px solid;
+    border-width: 2px 2px 0 0;
+    transition: transform 0.2s;
+  }
+  
+  .accordion-wrapper .accordion-section button[aria-expanded="false"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%) rotate(45deg);
+    width: 9px;
+    height: 9px;
+    border: 2px solid;
+    border-width: 2px 2px 0 0;
+    transition: transform 0.2s;
   }
   
   .accordion-wrapper .accordion-section button[aria-expanded="true"] {
@@ -149,8 +143,13 @@ main .section .accordion-wrapper {
   .section.accordion-container > div.default-content-wrapper {
     padding: 0;
   }
-  
+
   @media (min-width: 900px) {
+    .accordion h4 {
+      background-color: lightgray;
+      border: 1px solid black;
+    }
+
     .accordion-wrapper .accordion-panel {
       margin: auto;
       padding-left: 22px;
