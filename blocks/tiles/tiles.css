@@ -14,8 +14,8 @@ governing permissions and limitations under the License.
     text-align: left;
   }
   
-  .tiles.tall h3,
-  .tiles.tall p {
+  .tiles.wrapped-text h3,
+  .tiles.wrapped-text p {
     color: black;
   }
 
@@ -27,49 +27,56 @@ governing permissions and limitations under the License.
     padding: 0;
   }
   
-  .tiles.contained > div {
+  .tiles.wrapped-text > div {
     margin: 0 auto;
     padding: 24px 0;
     display: grid;
     justify-content: center;
   }
   
-  .tiles.contained > div > div {
+  .tiles.wrapped-text > div > div {
     margin-bottom: 24px;
+    padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
+    background: var(--bg-color-lightgrey);
+    border-radius: var(--card-border-radius-l);
+    display: flex;
+    flex-direction: column;
   }
-  
+
   .tiles.single-grid > div > div {
     margin-bottom: 0;
   }
   
-  .tiles.tall > div > div {
-    padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
-    background: var(--bg-color-lightgrey);
-    border-radius: var(--card-border-radius-l);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tiles.three.contained > div {
+  .tiles.three.wrapped-text > div {
     padding: var(--spacing-ml) 0;
   }
   
-  .tiles.four.contained > div {
+  .tiles.four.wrapped-text > div {
     gap: var(--spacing-s);
   }
-  
-  /* contained */
-  .tiles.contained img {
-    filter: var(--image-filter-drop-shadow-small);
+
+  .tiles.wrapped-text.center-aligned > div > div {
+    text-align: center;
+  }
+
+  .tiles.wrapped-text.left-aligned > div > div {
+    text-align: left;
   }
   
-  .tiles.contained img,
-  .tiles.contained:not(.icon-sm) svg {
+  /* wrapped-text */
+  .tiles.wrapped-text img {
+    filter: var(--image-filter-drop-shadow-small);
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: contain;
+  }
+  
+  .tiles.wrapped-text img,
+  .tiles.wrapped-text:not(.icon-sm) svg {
     display: inline-block;
   }
   
-  .tiles.contained.icon-sm svg {
+  .tiles.wrapped-text.icon-sm svg {
     display: inline-block;
   }
   
@@ -79,13 +86,13 @@ governing permissions and limitations under the License.
     line-height: var(--type-body-xxs-lh);
   }
   
-  /* - .tall - 3 card section  - */
-  .tiles.tall .tiles-image .image-wrapper-el {
+  /* - .wrapped-text - 3 card section  - */
+  .tiles.wrapped-text .tiles-image .image-wrapper-el {
     margin-top: auto;
     padding-top: var(--spacing-s);
   }
   
-  .tiles.tall h3 {
+  .tiles.wrapped-text h3 {
     margin-bottom: var(--spacing-xs);
     font-size: var(--type-heading-xl-size);
     line-height: var(--type-heading-xl-lh);
@@ -93,18 +100,12 @@ governing permissions and limitations under the License.
     letter-spacing: -0.04em;
   }
   
-  .tiles.tall p {
+  .tiles.wrapped-text p {
     font-size: var(--type-body-s-size);
     line-height: var(--type-body-s-lh);
   }
-  
-  .tiles.tall img {
-    width: 100%;
-    aspect-ratio: 5 / 4;
-    object-fit: contain;
-  }
-  
-  .tiles.tall .colored-tag.number-tag {
+
+  .tiles.wrapped-text .colored-tag.number-tag {
     margin-left: auto;
     margin-right: auto;
   }
@@ -130,15 +131,15 @@ governing permissions and limitations under the License.
     filter: none;
   }
   
-  .tiles.three.contained:not(.tall) > div {
+  .tiles.three.wrapped-text:not(.wrapped-text) > div {
     text-align: center;
   }
   
-  .tiles.contained > div > div > p:first-of-type {
+  .tiles.wrapped-text > div > div > p:first-of-type {
     margin: 0;
   }
   
-  .tiles.four.contained .tiles-content-wrapper p {
+  .tiles.four.wrapped-text .tiles-content-wrapper p {
     margin-bottom: 0;
   }
   
@@ -162,64 +163,58 @@ governing permissions and limitations under the License.
   main.without-full-width-hero .section.content .tiles-wrapper {
     margin-top: var(--spacing-m);
   }
-  
+
   @media screen and (min-width: 768px) {
-    /* tall cards */
-    .tiles.tall > div > div {
-      padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
-      text-align: center;
-    }
-  
-    .tiles.tall h3 {
+    .tiles.wrapped-text h3 {
       font-size: var(--type-heading-s-size);
       line-height: var(--type-heading-s-lh);
     }
   
-    .tiles.tall p {
+    .tiles.wrapped-text p {
       font-size: var(--type-body-s-size);
       line-height: var(--type-body-xs-lh);
     }
   
-    .tiles.tall .colored-tag.number-tag {
+    .tiles.wrapped-text .colored-tag.number-tag {
       margin-left: auto;
       margin-right: auto;
     }
   
-    /* contained */
-    .tiles.contained .tiles-content-wrapper p {
+    /* wrapped-text */
+    .tiles.wrapped-text .tiles-content-wrapper p {
       margin-bottom: 1em;
     }
   
     /* adapt for 3 column layout in redesign for 4-tiles - Start */
-    .tiles.four.contained > div {
+    .tiles.four.wrapped-text > div {
       grid-template-columns: repeat(6, 1fr);
       gap: 24px;
     }
   
-    .tiles.four.contained .tiles-content-wrapper p {
+    .tiles.four.wrapped-text .tiles-content-wrapper p {
       margin-top: var(--spacing-xxs);
     }
   
-    .tiles.four.contained > div > div {
+    .tiles.four.wrapped-text > div > div {
       grid-column: span 2;
     }
   
-    .tiles.three.tall.contained > div {
+    .tiles.three.wrapped-text.wrapped-text > div {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: var(--spacing-xs);
     }
   
     /* Dealing with 2 orphan items */
-    .tiles.four.contained > div > div:last-child:nth-child(3n - 1) {
+    .tiles.four.wrapped-text > div > div:last-child:nth-child(3n - 1) {
       grid-column-end: -2;
     }
   
-    .tiles.four.contained > div > div:nth-last-child(2):nth-child(3n + 1) {
+    .tiles.four.wrapped-text > div > div:nth-last-child(2):nth-child(3n + 1) {
       grid-column-end: 4;
     }
   
     /* Dealing with single orphan */
-    .tiles.four.contained > div > div:last-child:nth-child(3n - 2) {
+    .tiles.four.wrapped-text > div > div:last-child:nth-child(3n - 2) {
       grid-column-end: 5;
     }
   
@@ -231,74 +226,63 @@ governing permissions and limitations under the License.
       margin: var(--spacing-xl) 0 0;
     }
   
-    .tiles.contained > div > div {
+    .tiles.wrapped-text > div > div {
+      padding: var(--spacing-m) var(--spacing-s);
+      margin-bottom: var(--spacing-s);
       margin-bottom: 0;
       display: flex;
       flex-direction: column;
     }
   
-    /* tall */
-    .tiles.tall h3 {
+    /* wrapped-text */
+    .tiles.wrapped-text h3 {
       margin-bottom: var(--spacing-s);
       font-size: var(--type-heading-m-size);
       line-height: var(--type-heading-m-lh);
     }
   
-    .tiles.tall .tiles-image .image-wrapper-el {
+    .tiles.wrapped-text .tiles-image .image-wrapper-el {
       padding-top: var(--spacing-l);
       margin-bottom: 0;
     }
   
-    .tiles.tall > div > div {
-      padding: var(--spacing-m) var(--spacing-s);
-      margin-bottom: var(--spacing-s);
-    }
-  
-    /* .tiles.tall.contained > div {
-      grid-gap: 32px;
-    } */
-  
     /* force image to stick to bottom */
-    .tiles.tall > div > div > p {
+    .tiles.wrapped-text > div > div > p {
       flex: 1;
       font-size: var(--type-body-s-size);
       line-height: var(--type-body-s-lh);
     }
   
     /* others */
-    .tiles.two.contained > div {
+    .tiles.two.wrapped-text > div {
       /* max-width: 1200px; */
       grid-template-columns: 45% 45%;
       grid-gap: var(--spacing-xs);
       margin: 0 auto;
     }
   
-    .tiles.three.contained > div {
+    .tiles.three.wrapped-text > div {
+      grid-gap: var(--spacing-m);
+      padding: var(--spacing-xs) 0;
       max-width: var(--grid-desktop-container-width);
       grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: var(--spacing-xxl);
     }
   
-    .tiles.four.contained > div {
+    .tiles.four.wrapped-text > div {
       max-width: var(--grid-desktop-container-width);
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: var(--spacing-xl) var(--spacing-s);
       padding-top: 0;
     }
   
-    .tiles.four.contained > div > div {
+    .tiles.four.wrapped-text > div > div {
       grid-column: span 1;
     }
   
-    .tiles.three.tall.contained > div {
-      grid-gap: var(--spacing-m);
-      padding: var(--spacing-xs) 0;
-    }
-  
     /* cancel off previous effect */
-    .tiles.four.contained > div > div:last-child:nth-child(3n - 1),
-    .tiles.four.contained > div > div:nth-last-child(2):nth-child(3n + 1),
-    .tiles.four.contained > div > div:last-child:nth-child(3n - 2) {
+    .tiles.four.wrapped-text > div > div:last-child:nth-child(3n - 1),
+    .tiles.four.wrapped-text > div > div:nth-last-child(2):nth-child(3n + 1),
+    .tiles.four.wrapped-text > div > div:last-child:nth-child(3n - 2) {
       grid-column-end: auto;
     }
   }
@@ -308,12 +292,12 @@ governing permissions and limitations under the License.
       line-height: 1;
     }
   
-    .tiles.tall h3 {
+    .tiles.wrapped-text h3 {
       font-size: var(--type-heading-l-size);
       line-height: var(--type-heading-l-lh);
     }
   
-    .tiles.tall > div > div {
+    .tiles.wrapped-text > div > div {
       padding: var(--spacing-m) var(--spacing-m);
     }
   }

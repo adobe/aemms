@@ -12,6 +12,11 @@ main .section .accordion-wrapper {
     border: 1px solid black;
   }
   
+  .accordion[data-complete="true"] .accordion-section h4 {
+    border-bottom: none;
+    border-radius: 0;
+  }
+
   .section.accordion-container .accordion {
     border-bottom: 1px solid var(--global-color-light-gray);
     padding: 0 0 1.25rem;;
@@ -54,7 +59,7 @@ main .section .accordion-wrapper {
   /** style for accordion section animation */
   
   .accordion-wrapper .accordion-section div[role="region"] {
-    transition: min-height 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    transition: min-height 0.1s ease-in-out, max-height 0.3s ease-in-out;
   }
   
   .accordion-wrapper .accordion[data-complete="true"] .accordion-section div[role="region"][aria-hidden="true"] {
@@ -72,7 +77,12 @@ main .section .accordion-wrapper {
     margin: auto;
     padding-left: 22px;
   }
-  
+
+  .accordion-wrapper .accordion[data-complete="true"] .accordion-section div[role="region"][aria-hidden="false"] .tiles-wrapper {
+    margin-top: 0;
+    background-color: darkgray;
+  }
+
   .accordion-wrapper .accordion-section button {
     background-color: transparent;
     color: black;
@@ -100,8 +110,8 @@ main .section .accordion-wrapper {
   .accordion-wrapper .accordion-section button[aria-expanded="false"]::after {
     width: 10px;
     height: 10px;
-    border-bottom: 2px solid #a7a7a7;
-    border-right: 2px solid #a7a7a7;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
     transform-origin: 25% 25%;
     transform: rotate(45deg) translateY(-50%);
     transition: transform .1s ease;
@@ -111,8 +121,8 @@ main .section .accordion-wrapper {
   .accordion-wrapper .accordion-section button[aria-expanded="true"]::after {
     width: 10px;
     height: 10px;
-    border-bottom: 2px solid #a7a7a7;
-    border-right: 2px solid #a7a7a7;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
     transform-origin: 75% 75%;
     transform: rotate(-45deg) translateY(-50%);
     transition: transform .1s ease;
