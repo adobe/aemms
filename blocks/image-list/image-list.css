@@ -1,45 +1,89 @@
-.image-list > div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .image-list img {
-    width: 100%;
-  }
-  
-  .image-list > div > div {
-    order: 1;
-  }
-  
-  .image-list > div > .image-list-img-col {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.image-list-wrapper {
+  padding-top: 0;
+  padding-bottom: 90px;
+  color: black;
+}
+
+.columns-2 > .image-list-wrapper {
+  margin-bottom: 45px;
+}
+
+main div.image-list-wrapper {
+  padding-top: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.image-list.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 30px;
+  row-gap: 20px;
+  margin: auto;
+}
+
+.image-list.block > div {
+  display: flex;
+  flex: 1;
+  gap: 18px;
+  background-color: lightgrey;
+  justify-content: left;
+  margin: auto 0;
+}
+
+.image-list.block img {
+  width: auto;
+  height: auto;
+  max-width: unset;
+}
+
+.image-list.block h3 {
+  margin: 0;
+  padding: 8px 0 10px;
+  font-weight: 100;
+  font-size: 25px;
+}
+
+.image-list.block p {
+  color: #292e32;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.button-container {
+  margin-top: 50px;
+}
+
+.image-list.block .item > div {
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .image-list.block {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+    margin: 50px;
   }
 
-  .image-list > div > .image-list-text-col {
-    text-align: center;
+  .image-list .button-container {
+    margin-top: 10px;
   }
-  
-  .image-list > div > .image-list-img-col img {
-    display: block;
-    width: auto;
-    height: auto;
-  }
-  
-  @media (width >= 900px) {
-    .image-list > div {
-      align-items: center;
-      flex-direction: unset;
-      gap: 32px;
-    }
-  
-    .image-list > div > div {
-      flex: 1;
-      order: unset;
-    }
 
-    .image-list > div > .image-list-text-col {
-        text-align: left;
-      }
+  .image-list.block .item {
+    margin-top: 10px;
   }
+}
+
+@media (min-width: 900px) {
+  .image-list.block > div {
+    gap: 10px;
+  }
+
+  .image-list.block {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+    margin: 40px;
+  }
+}
