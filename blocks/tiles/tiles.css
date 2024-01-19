@@ -55,14 +55,14 @@ governing permissions and limitations under the License.
     gap: var(--spacing-s);
   }
 
-  .tiles.wrapped-text.center-aligned > div > div {
+  .tiles.wrapped-text > div > div h3 {
     text-align: center;
   }
-
-  .tiles.wrapped-text.left-aligned > div > div {
+  
+  .tiles.wrapped-text > div > div p {
     text-align: left;
   }
-  
+
   /* wrapped-text */
   .tiles.wrapped-text img {
     filter: var(--image-filter-drop-shadow-small);
