@@ -59,6 +59,12 @@ governing permissions and limitations under the License.
     text-align: center;
   }
   
+  /* text-sm */
+  .tiles.text-sm p {
+    font-size: var(--type-body-xs-size);
+    line-height: var(--type-body-xxs-lh);
+  }
+
   .tiles.wrapped-text > div > div p {
     text-align: left;
   }
@@ -80,29 +86,10 @@ governing permissions and limitations under the License.
     display: inline-block;
   }
   
-  /* text-sm */
-  .tiles.text-sm p {
-    font-size: var(--type-body-xs-size);
-    line-height: var(--type-body-xxs-lh);
-  }
-  
   /* - .wrapped-text - 3 card section  - */
   .tiles.wrapped-text .tiles-image .image-wrapper-el {
     margin-top: auto;
     padding-top: var(--spacing-s);
-  }
-  
-  .tiles.wrapped-text h3 {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--type-heading-xl-size);
-    line-height: var(--type-heading-xl-lh);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
-  
-  .tiles.wrapped-text p {
-    font-size: var(--type-body-s-size);
-    line-height: var(--type-body-s-lh);
   }
 
   .tiles.wrapped-text .colored-tag.number-tag {
@@ -143,11 +130,11 @@ governing permissions and limitations under the License.
     margin-bottom: 0;
   }
   
-  .tiles.colored-icon h3 {
+  /* .tiles.colored-icon h3 {
     font-weight: 700;
     font-size: var(--type-heading-s-size);
     line-height: var(--type-heading-s-lh);
-  }
+  } */
   
   /* center */
   .tiles.center .tiles-content-wrapper {
@@ -221,7 +208,7 @@ governing permissions and limitations under the License.
     /* adapt for 3 column layout in redesign for 4-tiles - End */
   }
   
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 768px) {
     .tiles-wrapper {
       margin: var(--spacing-xl) 0 0;
     }
