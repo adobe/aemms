@@ -343,6 +343,15 @@ main img {
   width: 24px;
 }
 
+.toc-layout h2 {
+  color: lightsalmon;
+  margin-top: 0;
+}
+
+main .section.active h2 {
+  display: none;
+}
+
 body.toc-layout.section:not(.hero-container) {
   font-size: var(--body-font-size-xs);
 }
@@ -416,11 +425,6 @@ main .section.transparent-grey-color h6 {
 
 main .section.color-primary {
   color: var(--primary);
-}
-
-.toc-layout h2 {
-  color: lightsalmon;
-  margin-top: 0;
 }
 
 main .section.color-primary h1,  main .section.color-primary h2 {
