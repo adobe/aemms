@@ -682,6 +682,9 @@ main .section.highlight {
 
 .toc-layout .section.active {
   display: block;
+}
+
+.toc-layout .section.active .default-content-wrapper {
   color: white;
 }
 
