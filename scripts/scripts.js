@@ -208,6 +208,15 @@ export function decorateExternalLinks(main) {
   });
 }
 
+export function highlightText(element) {
+  element.querySelectorAll('li, p').forEach((el) => {
+    const content = el.innerHTML;
+    const pattern = /\[([a-zA-Z-]+)\]([\s\S]*?)\[\1\]/g;
+    const processedContent = content.replace(pattern, '<span class="$1">$2</span>');
+    el.innerHTML = processedContent;
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -225,6 +234,7 @@ export function decorateMain(main) {
   initializeNavigation();
   buildTocBlock(main);
   decorateExternalLinks(main);
+  highlightText(main);
 }
 
 /**

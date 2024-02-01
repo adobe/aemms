@@ -753,3 +753,18 @@ main .section.highlight {
     cursor: pointer;
   }
 }
+
+.green {
+  color: bisque;
+  background-color: green;
+}
+
+.yellow {
+  color: green;
+  background-color: yellow;
+}
+
+.red {
+  color: black;
+  background-color: red;
+}
