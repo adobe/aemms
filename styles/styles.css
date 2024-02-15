@@ -454,6 +454,15 @@ main .section.narrower > .tab-item.active > .section-container {
   max-width: 45rem;
 }
 
+.homepage main img {
+  margin: auto;
+  width: 100%;
+}
+
+.homepage .section {
+  padding: 0;
+}
+
 /* section - narrow/narrower with background image compatibility */
 main .section.narrow.section.with-background-image > .section-container,
 main .section.narrower.section.with-background-image > .section-container {
@@ -588,6 +597,10 @@ main .section.image-before-after-t1 {
     margin-left: auto;
     max-width: 45rem;
     margin-block-end: 3rem;
+  }
+
+  .homepage .section > div {
+    max-width: 100%;
   }
 
   /* section - narrow/narrower with background image compatibility */
@@ -767,4 +780,8 @@ main .section.highlight {
 .red {
   color: black;
   background-color: red;
+}
+
+.homepage .section .default-content-wrapper p {
+  margin: 0;
 }
