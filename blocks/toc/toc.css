@@ -47,6 +47,29 @@ main .toc.block ul li a {
     display: inline-flex;
     align-items: center;
     color: var(--secondary);
+    text-decoration: none;
+}
+
+main .toc.block ul li a::after {
+    width: 100%;
+    height: 3.5px;
+    display: block;
+    content: "";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 100000;
+    transform: scale(0);
+    transform-origin: center center;
+    transition: .5s;
+    transition-property: background-color,transform;
+}
+
+main .toc.block ul li a:hover::after {
+    text-decoration: none;
+    background-color: var(--toc-container-border);
+    transform: scale(1);
 }
 
 main .toc-container .main-content {
