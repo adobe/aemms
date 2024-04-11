@@ -1,7 +1,10 @@
 /* stylelint-disable media-feature-range-notation */
 
-.bg-grey {
+main .toc.block ul li.bg-grey {
     background: #eaeaea;
+    font-weight: bolder;
+    font-size: 19px;
+    transition: 1s;
 }
 
 main .toc-container .section-container {
