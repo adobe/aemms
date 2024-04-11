@@ -1,4 +1,9 @@
 /* stylelint-disable media-feature-range-notation */
+
+.bg-grey {
+    background: #eaeaea;
+}
+
 main .toc-container .section-container {
     display: flex;
     flex-wrap: wrap;
