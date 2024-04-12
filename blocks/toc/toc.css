@@ -117,7 +117,7 @@ main .main-content h2 {
 }
 
 main .section:not([id='']) {
-    scroll-margin-top: 18rem;
+    scroll-margin-top: 10rem;
     margin-top: 0;
 }
 
