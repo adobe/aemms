@@ -49,6 +49,10 @@
   --nav-height: 64px;
 }
 
+.white {
+  color: var(--white);
+}
+
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
@@ -519,6 +523,8 @@ main .section.three-columns-layout.with-static-background-image > picture {
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
   margin-top: 1em;
   border-bottom: 1px solid var(--primary);
+  font-size: var(--heading-font-size-xxl);
+  color: var(--dark-color);
 }
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h3 {

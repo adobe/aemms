@@ -428,6 +428,21 @@ governing permissions and limitations under the License.
     box-sizing: border-box;
     padding-left: 0;
   }
+
+  .section.with-background-image .columns.plain-links > div li {
+    font-size: 25px;
+    font-family: "Adobe Clean", adobe-clean, sans-serif
+  }
+
+  .section.with-background-image .columns.special h6 {
+    font-size: var(--body-font-size-m);
+    font-weight: bold;
+  }
+
+  .columns.plain-links > div li:marker {
+    color: red;
+    font-size: 1.5em;
+  }
   
   .columns.plain-links > div a {
     font-size: var(--body-font-size-s);
