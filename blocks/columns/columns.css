@@ -312,6 +312,12 @@ governing permissions and limitations under the License.
     width: 100%;
     object-fit: cover;
   }
+
+  .columns:not(.native-image-sizes).text-and-image-in-column > div div.text-col span img {
+    height: 60%;
+    width: 60%;
+    object-fit: cover;
+  }
   
   .columns :not(.special) :not(.no-padding) > div div.non-singleton-img {
     margin: 0 1rem;
@@ -752,4 +758,5 @@ governing permissions and limitations under the License.
     .section.with-background-image.darkbg .columns.plain-links > div li {
       color: var(--white);
     }
+    
   }
