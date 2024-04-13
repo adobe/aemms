@@ -191,6 +191,14 @@ html {
     margin-bottom: var(--spacing-xs);
   }
 
+  .desktop {
+    display: none;
+  }
+  
+  .mobile {
+    display: block;
+  }
+
   /* colored tags: color variation */
   .colored-tag.pink {
     background-color: var(--color-accent-pink-bg);
@@ -389,11 +397,6 @@ main .section {
   box-shadow: none!important;
 }
 
-.white {
-  color: var(--white);
-}
-
-
 /* section - small narrow */
 main .section.small-narrow {
   margin-top: 3rem;
@@ -521,9 +524,9 @@ main .section.three-columns-layout.with-static-background-image > picture {
 }
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
-  margin-top: 1em;
+  margin-top: 0;
   border-bottom: 1px solid var(--primary);
-  font-size: var(--heading-font-size-xxl);
+  font-size: var(--heading-font-size-s);
   color: var(--dark-color);
 }
 
@@ -659,9 +662,29 @@ main .section.image-before-after-t1 {
 }
 
 @media (width >= 900px) {
+  .desktop {
+      display: block !important;
+    }
+  
+  .mobile {
+    display: none !important;
+  }
+
   .section > div {
     max-width: 1300px;
     margin: auto;
+  }
+  
+  .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
+    margin-top: 0;
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@media (width >= 1200px) {
+  .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
+    margin-top: 1em;
+    font-size: var(--heading-font-size-xxl);
   }
 }
 

@@ -364,11 +364,11 @@ governing permissions and limitations under the License.
     width: 100%;
   }
   
-  @media (min-width: 62rem) {
-    .columns.text-top-links-below.collapse > div {
-      gap: 1.5rem;
+    @media (min-width: 62rem) {
+      .columns.text-top-links-below.collapse>div {
+        gap: 1.5rem;
+      }
     }
-  }
   
   .columns.collapse.text-top-links-below.columns-2-cols {
     max-width: 100%;
@@ -430,18 +430,15 @@ governing permissions and limitations under the License.
   }
 
   .section.with-background-image .columns.plain-links > div li {
-    font-size: 25px;
-    font-family: "Adobe Clean", adobe-clean, sans-serif
+    font-size: 15px;
+    font-family: "Adobe Clean", adobe-clean, sans-serif;
+    padding-bottom: 0;
+    color: var(--text-color);
   }
 
   .section.with-background-image .columns.special h6 {
     font-size: var(--body-font-size-m);
     font-weight: bold;
-  }
-
-  .columns.plain-links > div li:marker {
-    color: red;
-    font-size: 1.5em;
   }
   
   .columns.plain-links > div a {
@@ -675,6 +672,13 @@ governing permissions and limitations under the License.
     main .block.columns.big-gap > div {
       gap: 10.25rem;
     }
+
+    .section.with-background-image .columns.plain-links > div li {
+      font-size: 25px;
+      font-family: "Adobe Clean", adobe-clean, sans-serif;
+      padding-bottom: 1rem;
+    }
+  
   }
   
   /* Text-image overlap View */
@@ -739,5 +743,9 @@ governing permissions and limitations under the License.
   
     .columns :not(.table) h3 {
       font-size: var(--h3-font-size-desktop);
+    }
+
+    .section.with-background-image .columns.plain-links > div li {
+      color: var(--white);
     }
   }
