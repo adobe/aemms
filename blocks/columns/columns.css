@@ -440,6 +440,10 @@ governing permissions and limitations under the License.
     font-size: var(--body-font-size-m);
     font-weight: bold;
   }
+
+  .section.with-background-image.darkbg .columns.special h6 {
+    color: var(--darker-color);
+  }
   
   .columns.plain-links > div a {
     font-size: var(--body-font-size-s);
@@ -674,7 +678,7 @@ governing permissions and limitations under the License.
     }
 
     .section.with-background-image .columns.plain-links > div li {
-      font-size: 25px;
+      font-size: 27px;
       font-family: "Adobe Clean", adobe-clean, sans-serif;
       padding-bottom: 1rem;
     }
