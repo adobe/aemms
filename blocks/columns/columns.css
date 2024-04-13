@@ -745,7 +745,7 @@ governing permissions and limitations under the License.
       font-size: var(--h3-font-size-desktop);
     }
 
-    .section.with-background-image .columns.plain-links > div li {
+    .section.with-background-image.darkbg .columns.plain-links > div li {
       color: var(--white);
     }
   }
