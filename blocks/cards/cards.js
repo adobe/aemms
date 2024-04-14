@@ -40,7 +40,6 @@ export default function decorate(block) {
       a.innerHTML = '';
       a.append(...li.children);
       li.append(a);
-      console.log(li);
       [...a.children].forEach(addCardChildrenClasses);
     } else {
       [...li.children].forEach(addCardChildrenClasses);
