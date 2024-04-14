@@ -200,14 +200,6 @@ html {
     display: block;
   }
 
-  .darkbg h2:first-of-type {
-    color: var(--dark-color);
-  }
-
-  .brightbg h2:first-of-type {
-    color: var(--primary);
-  }
-
   /* colored tags: color variation */
   .colored-tag.pink {
     background-color: var(--color-accent-pink-bg);
@@ -367,6 +359,14 @@ main img {
 .toc-layout h2 {
   color: lightsalmon;
   margin-top: 0;
+}
+
+.darkbg h2:first-of-type {
+  color: var(--dark-color);
+}
+
+.brightbg h2:first-of-type {
+  color: var(--primary);
 }
 
 main .section.active h2 {
