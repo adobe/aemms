@@ -41,6 +41,28 @@ function buildHeroBlock(main) {
   }
 }
 
+// Function to get the current window size
+export function getWindowSize() {
+  const windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+  const windowHeight = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+  return {
+    width: windowWidth,
+    height: windowHeight,
+  };
+}
+
+export function getViewPort() {
+  const { width } = getWindowSize();
+  if (width >= 900) {
+    return 'desktop';
+  }
+  return 'mobile';
+}
+
 function decorateSectionsWithBackgrounds(element) {
   const sections = element.querySelectorAll(`.section[data-bg-image],
   .section[data-bg-image-desktop],
@@ -51,7 +73,7 @@ function decorateSectionsWithBackgrounds(element) {
     const bgImageDesktop = section.getAttribute('data-bg-image-desktop');
     const bgImageMobile = section.getAttribute('data-bg-image-mobile');
     const bgImageTablet = section.getAttribute('data-bg-image-tablet');
-    const viewPort = window.deviceType;
+    const viewPort = getViewPort();
     let background;
     switch (viewPort) {
       case 'Mobile':

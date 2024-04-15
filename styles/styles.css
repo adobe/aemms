@@ -17,6 +17,7 @@
   --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
+  --darker-color:#7A7A7A;
   --text-color: black;
   --white: white;
   --secondary: #007cad;
@@ -47,6 +48,10 @@
 
   /* nav height */
   --nav-height: 64px;
+}
+
+.white {
+  color: var(--white);
 }
 
 @font-face {
@@ -185,6 +190,14 @@ html {
       rgb(0 0 0 / 4%) 0 22px 33px, rgb(0 0 0 / 3.5%) 0 13px 19px,
       rgb(0 0 0 / 3%) 0 7px 10px, rgb(0 0 0 / 2%) 0 3px 4px;
     margin-bottom: var(--spacing-xs);
+  }
+
+  .desktop {
+    display: none;
+  }
+  
+  .mobile {
+    display: block;
   }
 
   /* colored tags: color variation */
@@ -348,6 +361,14 @@ main img {
   margin-top: 0;
 }
 
+.darkbg h2:first-of-type {
+  color: var(--dark-color);
+}
+
+.brightbg h2:first-of-type {
+  color: var(--primary);
+}
+
 main .section.active h2 {
   display: none;
 }
@@ -384,11 +405,6 @@ main .section {
   border: none!important;
   box-shadow: none!important;
 }
-
-.white {
-  color: var(--white);
-}
-
 
 /* section - small narrow */
 main .section.small-narrow {
@@ -517,8 +533,9 @@ main .section.three-columns-layout.with-static-background-image > picture {
 }
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
-  margin-top: 1em;
+  margin-top: 0;
   border-bottom: 1px solid var(--primary);
+  font-size: var(--heading-font-size-s);
 }
 
 .section.with-background-image > div:first-of-type:not(.quote-wrapper) h3 {
@@ -653,9 +670,29 @@ main .section.image-before-after-t1 {
 }
 
 @media (width >= 900px) {
+  .desktop {
+      display: block !important;
+    }
+  
+  .mobile {
+    display: none !important;
+  }
+
   .section > div {
     max-width: 1300px;
     margin: auto;
+  }
+  
+  .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
+    margin-top: 0;
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@media (width >= 1200px) {
+  .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
+    margin-top: .5em;
+    font-size: var(--heading-font-size-xxl);
   }
 }
 

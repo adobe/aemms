@@ -14,7 +14,7 @@ governing permissions and limitations under the License.
 .section.cards-container {
     margin: 4rem 0 5rem;
   }
-  
+
   .cards > ul {
     display: flex;
     list-style: none;
@@ -506,6 +506,21 @@ governing permissions and limitations under the License.
     .cards .cards-card-body {
       font-size: 1rem;
     }
+
+    .cards a .cards-card-body > div {
+      font-size: 1.3rem;
+      background-color: var(--light-color);
+      padding-top: 10px;
+      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgba(0 0 0 / 19%);
+    }
+
+    .cards a .cards-card-body > div:hover {
+      font-size: 2.0rem;
+      line-height: 1.2;
+      transition: 1s;
+      background-color: var(--light-color);
+    }
+
   
     main .cards.info-points .cards-card-body * {
       text-align: center;

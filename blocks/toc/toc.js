@@ -60,6 +60,12 @@ function buildTOCTop(ul, block) {
     aLink.innerText = li.innerText;
     li.innerText = '';
     li.append(aLink);
+    li.addEventListener('click', () => {
+      ul.querySelectorAll('li').forEach((x) => {
+        x.classList.remove('bg-grey');
+      });
+      li.classList.add('bg-grey');
+    });
   });
   [...document.querySelectorAll('[data-toc-anchor]')].forEach((section) => {
     const name = section.dataset.tocAnchor.toLowerCase().trim();
