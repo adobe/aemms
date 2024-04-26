@@ -76,6 +76,7 @@ main .toc.block ul li a:hover::after {
 main .toc.block ul li.bg-grey > a:hover::after {
     background-color: #272b2e;
     transition: 1s;
+    height: 1px;
 }
 
 main .toc-container .main-content {
