@@ -1,12 +1,5 @@
 /* stylelint-disable media-feature-range-notation */
 
-main .toc.block ul li.bg-grey {
-    background: #eaeaea;
-    font-weight: bolder;
-    font-size: 20px;
-    transition: 1s;
-}
-
 main .toc-container .section-container {
     display: flex;
     flex-wrap: wrap;
@@ -111,6 +104,19 @@ main .toc-container .toc.flat ul li a {
     line-height: unset;
     color: var(--secondary);
 }
+
+main .toc.block ul li.bg-grey {
+    background: #eaeaea;
+    font-weight: bolder;
+    font-size: 21px;
+    transition: 1s;
+    text-shadow: 2px 2px white;
+}
+
+main .toc.block ul li.bg-grey > a {
+    color: grey;
+}
+
 
 main .main-content h2 {
     scroll-margin-top: 13rem;
