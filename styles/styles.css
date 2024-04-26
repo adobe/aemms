@@ -686,6 +686,7 @@ main .section.image-before-after-t1 {
   .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
     margin-top: 0;
     font-size: var(--heading-font-size-xl);
+    color: var(--toc-container-border);
   }
 }
 
