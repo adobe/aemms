@@ -110,11 +110,10 @@ main .toc.block ul li.bg-grey {
     font-weight: bolder;
     font-size: 21px;
     transition: 1s;
-    text-shadow: 2px 2px white;
 }
 
 main .toc.block ul li.bg-grey > a {
-    color: grey;
+    color: red;
 }
 
 
