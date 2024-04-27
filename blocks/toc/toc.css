@@ -1,12 +1,5 @@
 /* stylelint-disable media-feature-range-notation */
 
-main .toc.block ul li.bg-grey {
-    background: #eaeaea;
-    font-weight: bolder;
-    font-size: 20px;
-    transition: 1s;
-}
-
 main .toc-container .section-container {
     display: flex;
     flex-wrap: wrap;
@@ -80,6 +73,12 @@ main .toc.block ul li a:hover::after {
     transform: scale(1);
 }
 
+main .toc.block ul li.bg-grey > a:hover::after {
+    background-color: #272b2e;
+    transition: 1s;
+    height: 1px;
+}
+
 main .toc-container .main-content {
     width: 100%;
     padding: 0 1rem;
@@ -111,6 +110,19 @@ main .toc-container .toc.flat ul li a {
     line-height: unset;
     color: var(--secondary);
 }
+
+main .toc.block ul li.bg-grey {
+    background: #eaeaea;
+    font-weight: bolder;
+    font-size: 21px;
+    transition: 1s;
+    text-shadow: 2px 2px white;
+}
+
+main .toc.block ul li.bg-grey > a {
+    color: #272b2e;
+}
+
 
 main .main-content h2 {
     scroll-margin-top: 13rem;

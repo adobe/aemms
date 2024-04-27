@@ -646,10 +646,10 @@ main .section.image-before-after-t1 {
 
   
   main .section.image-before-after-t1 > div p img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 2vh;
+    top: 16vh;
     z-index: 1;
     left: 8vw;
   }
@@ -686,6 +686,7 @@ main .section.image-before-after-t1 {
   .section.with-background-image > div:first-of-type:not(.quote-wrapper) h2:first-of-type {
     margin-top: 0;
     font-size: var(--heading-font-size-xl);
+    color: var(--toc-container-border);
   }
 }
 
