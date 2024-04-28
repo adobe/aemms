@@ -649,7 +649,7 @@ main .section.image-before-after-t1 {
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 16vh;
+    top: 21vh;
     z-index: 1;
     left: 8vw;
   }
