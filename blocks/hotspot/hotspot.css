@@ -1,0 +1,41 @@
+
+.block.hotspot {
+    position: relative;
+}
+
+.block.hotspot img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.block.hotspot > div:nth-child(n+2) {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: red;
+    position: absolute;
+    cursor: pointer;
+}
+
+.block.hotspot > div:nth-child(n+2):hover::after,
+.block.hotspot > div:nth-child(n+2):focus::after,
+.block.hotspot > div:nth-child(n+2).onclick::after {
+    opacity: 1;
+    content: attr(data);
+    position: absolute;
+    padding: 5px;
+    width: 20vw;
+    left: -150%;
+    bottom: 150%;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--text-color);
+    font-size: var(--body-font-size-s);
+    transition: opacity 0.4s linear;
+    z-index: +1;
+}

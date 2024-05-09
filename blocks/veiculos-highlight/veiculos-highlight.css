@@ -1,0 +1,151 @@
+
+.veiculos-highlight.block {
+    width: 100%;
+    max-width: 1360px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div > div:last-of-type {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px auto 0;
+    gap: 2rem;
+}
+
+.veiculos-highlight.block .vehicles-list > div > div:last-of-type {
+    display: none;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div > div.vehicle > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div > div.vehicle > div > p:last-of-type {
+    order: 1;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div > div.vehicle > div > p:first-of-type {
+    order: 2;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div .metadata {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div > div.vehicle > div .button-container a {
+    width: 100%;
+    height: auto;
+    display: block;
+    color: #000;
+    font-size: 42px;
+    font-family: HyundaiSansHead-Regular, sans-serif;
+    line-height: 1.2;
+    background-color: transparent;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div .metadata > div:first-of-type {
+    width: 100%;
+    height: 50%;
+    display: block;
+    color: #000;
+    font-size: 12px;
+    font-family: HyundaiSansHead-Regular, sans-serif;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.veiculos-highlight.block .highlighted-vehicle > div .metadata > div:last-of-type {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 16px;
+    font-family: HyundaiSansHead-Medium, sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+.veiculos-highlight.block .vehicles-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 10px;
+}
+
+.veiculos-highlight.block .vehicles-list > div > div.vehicle img {
+    width: 202px;
+    height: auto;
+    object-fit: cover;
+}
+
+.veiculos-highlight.block .vehicles-list > div > div.vehicle > div .button-container a {
+    width: 100%;
+    height: auto;
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-family: HyundaiSansHead-Regular, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 20px;
+    background-color: transparent;
+    padding: 0;
+}
+
+.veiculos-highlight.block .vehicles-list > div > div.vehicle > div:hover .button-container a {
+    font-family: HyundaiSansHead-Medium, sans-serif;
+}
+
+@media (width < 992px) {
+    .veiculos-highlight .highlighted-vehicle {
+        display: none;
+    }
+
+    .veiculos-highlight.block .vehicles-list {
+        grid-template-columns: 1fr;
+    }
+
+    .veiculos-highlight.block .vehicles-list .vehicle {
+        width: 100%;
+        margin: auto;
+    }
+
+    .veiculos-highlight.block .vehicles-list > div > div.vehicle img {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+@media (width >= 1200px) {
+    .veiculos-highlight.block .vehicles-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-gap: 10px;
+        height: 20rem;
+    }
+}
