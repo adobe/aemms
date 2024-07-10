@@ -129,7 +129,7 @@ export default function decorate(block) {
 
   const titleEds = document.createElement('h2');
   titleEds.classList.add('article-hero-video-title');
-  titleEds.innerText = "Edge Delivery Services";
+  titleEds.innerText = "EDGE DELIVERY SERVICES";
 
   const title = document.createElement('h1');
   title.classList.add('article-hero-video-title');
