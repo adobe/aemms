@@ -64,6 +64,7 @@ function buildVideoTag(url) {
 
 export default function decorate(block) {
   const data = readBlockConfig(block);
+  console.log(data);
   // Get the image element from the block before we clear it
   const picture = block.querySelector('picture');
   block.innerText = '';
@@ -126,6 +127,10 @@ export default function decorate(block) {
   section.href = `${window.hlx.codeBasePath}/${sectionName?.toLowerCase()}`;
   section.append(`${sectionName}`);
 
+  const titleEds = document.createElement('h2');
+  titleEds.classList.add('article-hero-video-title');
+  titleEds.innerText = "Edge Delivery Services";
+
   const title = document.createElement('h1');
   title.classList.add('article-hero-video-title');
   title.innerText = data?.title.trim();
@@ -144,6 +149,7 @@ export default function decorate(block) {
   });
 
   titleContainer.append(section);
+  titleContainer.append(titleEds);
   titleContainer.append(title);
   if (getMetadata('authors')) titleContainer.append(authorLinks);
   block.append(titleContainer);
