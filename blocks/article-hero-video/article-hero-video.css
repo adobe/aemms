@@ -1,6 +1,7 @@
 div.article-hero-video-container {
     overflow: hidden;
-    padding: 0;
+    padding: 0; 
+}
   /* Remove the extra closing brace */
   
   div.article-hero-video {
@@ -60,6 +61,37 @@ div.article-hero-video-container {
     -webkit-background-clip: text;
     background-position: 0 0;
   }
+
+  .article-hero-video h2.article-hero-video-title {
+    position: relative;
+    font-size: 3.0vw;
+    color: transparent;
+    -webkit-text-stroke: .3px #12b8e6;
+    text-transform: uppercase;
+  }
+
+  .article-hero-video h2.article-hero-video-title::before {
+    content: 'EDGE DELIVERY SERVICES';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #12b8e6;
+    -webkit-text-stroke: 0px transparent;
+    border-right: 4px solid #12b8e6;
+    overflow: hidden;
+    animation: animate 30s linear infinite;
+  }
+  @keyframes animate {
+    0%, 10%, 100% {
+      width: 0;
+    }
+    70%, 90% {
+      width: 100%;
+    }
+  }
+
   
   .article-hero-video a.article-hero-video-section {
     font-size: 14px;

@@ -1,5 +1,7 @@
 import { getMetadata, readBlockConfig, toClassName } from '../../scripts/lib-franklin.js';
 import { getYoutubeVideoId } from '../../scripts/scripts.js';
+import { h2, span } from '../../scripts/dom-helpers.js';
+
 
 /**
  * Build an iframe for a YouTube video
@@ -130,6 +132,13 @@ export default function decorate(block) {
   const titleEds = document.createElement('h2');
   titleEds.classList.add('article-hero-video-title');
   titleEds.innerText = "EDGE DELIVERY SERVICES";
+
+  // const titleEds = h2({ class: 'article-hero-video-title' },
+  //   span('E'),
+  //   'DGE DE',
+  //   span('LI'),
+  //   'VERY SERVICES'
+  // );
 
   const title = document.createElement('h1');
   title.classList.add('article-hero-video-title');
