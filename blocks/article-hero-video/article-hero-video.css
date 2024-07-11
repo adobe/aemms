@@ -40,14 +40,6 @@ div.article-hero-video-container {
     margin: 0;
     color: #fff;
   }
-  
-  /* .article-hero-video h1.article-hero-video-title {
-    font-size: 5vw;
-    line-height: 1.5;
-    font-weight: 100;
-    margin-top: 0;
-    letter-spacing: 1px;
-  } */
 
   .article-hero-video h1.article-hero-video-title {
     font-size: 6vw;
@@ -81,9 +73,9 @@ div.article-hero-video-container {
     -webkit-text-stroke: 0px transparent;
     border-right: 4px solid transparent;
     overflow: hidden;
-    animation: animate 30s linear infinite;
+    animation: animateh2 5s linear infinite;
   }
-  @keyframes animate {
+  @keyframes animateh2 {
     0%, 10%, 100% {
       width: 0;
     }
@@ -91,7 +83,6 @@ div.article-hero-video-container {
       width: 100%;
     }
   }
-
   
   .article-hero-video a.article-hero-video-section {
     font-size: 14px;
