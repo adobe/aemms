@@ -49,7 +49,8 @@ div.article-hero-video-container {
     letter-spacing: 1px;
     color: transparent;
     -webkit-text-stroke: 2px #fff;
-    background: url(https://main--aemms--adobe.hlx.page/qsr/Q1-2024/assets/media_198ae51d59e74b881263e5cd361dce216b062e203.png);
+    /* background: url(https://main--aemms--adobe.hlx.page/qsr/Q1-2024/assets/media_198ae51d59e74b881263e5cd361dce216b062e203.png); */
+    background: url(https://main--hackathon2023--meejain.hlx.page/assets/media_198ae51d59e74b881263e5cd361dce216b062e203.png);
     -webkit-background-clip: text;
     background-position: 0 0;
   }
