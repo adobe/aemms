@@ -79,7 +79,7 @@ div.article-hero-video-container {
     height: 100%;
     color: #12b8e6;
     -webkit-text-stroke: 0px transparent;
-    border-right: 4px solid #12b8e6;
+    border-right: 4px solid transparent;
     overflow: hidden;
     animation: animate 30s linear infinite;
   }
