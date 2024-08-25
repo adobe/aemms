@@ -461,6 +461,7 @@ governing permissions and limitations under the License.
     font-weight: var(--font-weight-medium);
     background-color: unset;
     color: var(--secondary);
+    font-style: italic;
   }
   
   .columns.plain-links.collapse ul {
