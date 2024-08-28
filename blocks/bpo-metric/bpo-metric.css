@@ -1,0 +1,162 @@
+.bpo-metric {
+  padding-top: 10px;
+}
+
+.bpo-metric > div {
+  display: flex;
+  flex-direction: column;
+  column-gap: 0;
+  width: 100%;
+}
+
+.bpo-metric img {
+  width: 100%;
+}
+
+.bpo-metric > div > div {
+  order: 1;
+  background-color: #5A5C6D;
+  border: 2px solid black;
+}
+
+.bpo-metric > div > div > p {
+  margin-bottom: 0;
+}
+
+.bpo-metric > div > div > p strong {
+  font-weight: bold;
+}
+
+/* .bpo-metric > div > div > div > p {
+  display: flex;
+  margin-bottom: 0;
+} */
+
+.bpo-metric > div > div > p:last-child {
+  color: white;
+  margin-top: 0;
+}
+
+.bpo-metric > div > div > div > p img{
+  height: 100px;
+  width: 150px;
+}
+
+.bpo-metric .top > div {
+  border-left: 2px solid white;
+  padding-left: 30px;
+}
+
+.bpo-metric > div > div:nth-child(1) {
+  flex-basis: 20%;         /* The first div takes 20% of the parent div's width */
+  padding: 25px;
+  padding-right: 0;
+}
+
+.bpo-metric > div > div:nth-child(2),
+.bpo-metric > div div:nth-child(3) {
+  flex-basis: 50%;
+}
+
+.bpo-metric .top > p img {
+  width: 150px;
+  height: auto;
+}
+
+.bpo-metric > div > .bpo-img-col img {
+  display: block;
+  height: auto;
+}
+
+.bpo-metric > div > div > div:not(.vega-embed),
+.bpo-metric > div > div > p em {
+  display: flex;
+  color: black;
+  padding: 10px;
+  font-size: 15px;
+  padding-top: 0;
+  background-color: #EFEFEF
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .flex,
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .flex,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category {
+  display: block;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category .flex,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category .flex {
+  height: auto;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category > p > .icon,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category > p > .icon {
+  height: 100px;
+  width: 100px;
+  padding-right: 30px;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category .flex .icon img,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category .flex .icon img {
+  height: 25px;
+  width: 25px;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(2) .category .flex .icon,
+.bpo-metric > div:nth-child(4) > div:nth-child(3) .category .flex .icon {
+  padding-right: 5px;
+}
+
+.bpo-metric > div > div > p:first-child {
+  color: white;
+  text-align: center;
+}
+
+.bpo-metric > div > div:nth-child(1) > strong {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  padding-left: 40px;
+}
+
+.bpo-metric .top {
+  background-color: #DFDFDF;
+  padding-bottom: 0;
+}
+
+.bpo-metric .top .align strong {
+  align-items: center;
+  display: flex
+}
+
+.bpo-metric > div > div:nth-child(2) .usage-results,
+.bpo-metric > div:nth-child(2) > div:nth-child(2) .lighthouse-results,
+.bpo-metric > div:nth-child(3) > div:nth-child(2) > div,
+.bpo-metric > div:nth-child(3) > div:nth-child(3) > div,
+.bpo-metric > div:nth-child(3) > div:nth-child(2) > p:last-child  {
+  padding-top: 25px;
+  background-color: #EFEFEF;
+}
+
+@media (width >= 900px) {
+  .bpo-metric > div {
+    align-items: stretch;
+    flex-direction: row;
+    gap: 5px;
+    display: flex;
+    margin-top: 5px;
+  }
+
+  .bpo-metric > div > div {
+    flex: 1;
+    order: unset;
+    min-height: 100%;
+  }
+}

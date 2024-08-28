@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Speedometer with target ring. Draws each arc separately instead of pie chart out of the whole circle so that the image will not have the empty bottom half circle. Starting point is -90 degree, hence -6.28/4 = -1.57.",
+  "config": {"background": {"expr": "font_grey"}},
+  "padding" : {"left": 5, "top": 5, "right": 5, "bottom": 5},
+  "autosize" :"none",
+  "params": [
+      {"name": "low", "value" : 50},
+      {"name": "fair", "value" :80},
+      {"name": "fullCircle", "value" : 200},
+      {"name": "startAt", "value":-1.57},
+      {"name": "y1", "value": 90},
+      {"name": "high", "value" : 75},
+      {"name": "green_color", "value": "#b7cf75"},
+      {"name": "yellow_color", "value": "#ffe286"},
+      {"name": "red_color", "value": "#f07d73"},
+      {"name": "light_green", "value": "#DDE693"},
+      {"name": "light_yellow", "value": "#ffedb6"},
+      {"name": "light_red", "value": "#fbd7d4"},
+      {"name": "font_grey", "value": "#5a5c6f"},
+      {"name": "dark_grey", "value": "#6a6c7d"},
+      {"name": "bg_grey", "value": "#efefef"},
+      {"name": "light_grey", "value": "#dddddd"},
+      {"name": "medium_grey", "value": "#cbcbcb"},
+      {"name": "needle_grey", "value": "#999999"},
+      {"name": "pure_white", "value": "#ffffff"},
+      {"name": "purple", "value": "#a97fcc"},
+      {"name": "blue", "value": "#007fff"}
+  ],
+  "layer" : [
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 53,
+        "radius2": 63,
+        "y": {"expr": "y1"},
+        "theta": {"expr": "startAt"},
+        "theta2": {"expr": "startAt + 6.28*datum.value/fullCircle"},
+        "color": {"expr": "datum.value < low ? red_color : (datum.value < fair ? yellow_color : green_color)"},
+        "description": "score value ring"
+      }
+    },
+     {
+      "mark": {
+        "type": "arc",
+        "radius": 53,
+        "radius2": 60,
+        "y": {"expr": "y1"},
+        "theta": {"expr": "startAt + 6.28*datum.value/fullCircle"},
+        "theta2": {"expr": "startAt + 6.28 * 1/2"},
+        "color": {"expr": "needle_grey"},
+        "description": "score value ring offset"
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 68,
+        "radius2": 88,
+        "y": {"expr": "y1"},        
+        "theta": {"expr": "startAt"},
+        "theta2": {"expr": "startAt + 6.28*low/fullCircle"},
+        "color": {"expr": "red_color"},
+        "description": "red arc"
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 68,
+        "radius2": 88,
+        "y": {"expr": "y1"},
+        "theta": {"expr": "startAt+ 6.28*low/fullCircle"},
+        "theta2": {"expr": "startAt + 6.28*fair/fullCircle"},
+        "color": {"expr": "yellow_color"},
+        "description": "yellow arc"
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 68,
+        "radius2": 88,
+        "y": {"expr": "y1"},
+        "theta": {"expr": "startAt + 6.28*fair/fullCircle"},
+        "theta2": {"expr": "startAt + 6.28*100/fullCircle"},
+        "color": {"expr": "green_color"},
+        "description": "green arc"
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 73,
+        "y": {"expr": "y1"},
+        "theta" : {"expr": "startAt + 6.28*(datum.value-3)/fullCircle"},
+        "theta2" : {"expr": "startAt+ 6.28*datum.value/fullCircle"},
+        "color": {"expr": "needle_grey"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "radius": 8,
+        "y": 85,
+        "fontSize": {"expr": "toNumber(datum.display?datum.display:datum.value)>=0? 42 : 32"},
+        "font":"Helvetica Neue",
+        "text" : {"expr": "datum.display?datum.display:datum.value"}
+      },
+      "encoding": {
+        "color": {
+          "condition": [
+            {"test": "datum.value < low", "value": {"expr": "red_color" }},
+            {"test": "datum.value < fair", "value": {"expr": "yellow_color" } }
+          ],
+          "value" : {"expr": "green_color"}
+        }
+      }
+    }
+  ],
+  "height":100,
+  "width":170
+}
