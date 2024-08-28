@@ -47,25 +47,16 @@
   padding-left: 30px;
 }
 
-.bpo-metric > div > div:nth-child(1) {
-  flex-basis: 20%;         /* The first div takes 20% of the parent div's width */
-  padding: 25px;
-  padding-right: 0;
-}
-
 .bpo-metric > div > div:nth-child(2),
 .bpo-metric > div div:nth-child(3) {
   flex-basis: 50%;
 }
 
-.bpo-metric .top > p img {
-  width: 150px;
-  height: auto;
-}
-
-.bpo-metric > div > .bpo-img-col img {
-  display: block;
-  height: auto;
+.bpo-metric > div > div:nth-child(1) {
+  flex-basis: 20%;         /* The first div takes 20% of the parent div's width */
+  padding: 25px;
+  padding-top: 40px;
+  padding-right: 0;
 }
 
 .bpo-metric > div > div > div:not(.vega-embed),
@@ -76,6 +67,25 @@
   font-size: 15px;
   padding-top: 0;
   background-color: #EFEFEF
+}
+
+.bpo-metric > div:nth-child(1) > div:nth-child(1),
+.bpo-metric > div:nth-child(2) > div:nth-child(1) {
+  padding-top: 100px;
+}
+
+.bpo-metric > div:nth-child(4) > div:nth-child(1) {
+  padding-top: 80px;
+}
+
+.bpo-metric .top > p img {
+  width: 150px;
+  height: auto;
+}
+
+.bpo-metric > div > .bpo-img-col img {
+  display: block;
+  height: auto;
 }
 
 .bpo-metric > div:nth-child(4) > div:nth-child(2) .flex,

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 function processChildDiv(selector, block) {
   const childDiv = block.querySelector(selector);
   childDiv.classList.add('icon-style');
