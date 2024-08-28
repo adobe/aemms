@@ -164,7 +164,7 @@ function createCanvas() {
   });
 }
 
-function createLineGraph(url, chartId, datasets, yAxisConfig) {
+function createLineGraph(url, chartId, datasets, yAxisConfig, stepSize) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -220,7 +220,7 @@ function createLineGraph(url, chartId, datasets, yAxisConfig) {
               max: yAxisConfig[yAxisConfig.length - 1].end,
               ticks: {
                 // eslint-disable-next-line max-len
-                stepSize: (yAxisConfig[yAxisConfig.length - 1].end - yAxisConfig[0].start) / yAxisConfig.length,
+                stepSize,
               },
               grid: {
                 display: false,
@@ -252,8 +252,9 @@ function createLineGraphforAEMUsage(coreCompanyId) {
     { color: 'rgba(255, 205, 86, 0.2)', start: 5, end: 20 },
     { color: 'rgba(75, 192, 192, 0.2)', start: 20, end: 30 },
   ];
+  const stepSize = 5;
 
-  createLineGraph(url, chartId, datasets, yAxisConfig);
+  createLineGraph(url, chartId, datasets, yAxisConfig, stepSize);
 }
 
 function createLineGraphforAEMAdoption(coreCompanyId) {
@@ -269,8 +270,9 @@ function createLineGraphforAEMAdoption(coreCompanyId) {
     { color: 'rgba(255, 205, 86, 0.2)', start: 200, end: 500 },
     { color: 'rgba(75, 192, 192, 0.2)', start: 500, end: 800 },
   ];
+  const stepSize = 200;
 
-  createLineGraph(url, chartId, datasets, yAxisConfig);
+  createLineGraph(url, chartId, datasets, yAxisConfig, stepSize);
 }
 
 function createLineGraphForCacheRatio(coreCompanyId) {
@@ -286,8 +288,9 @@ function createLineGraphForCacheRatio(coreCompanyId) {
     { color: 'rgba(255, 205, 86, 0.2)', start: 50, end: 80 },
     { color: 'rgba(75, 192, 192, 0.2)', start: 80, end: 100 },
   ];
+  const stepSize = 20;
 
-  createLineGraph(url, chartId, datasets, yAxisConfig);
+  createLineGraph(url, chartId, datasets, yAxisConfig, stepSize);
 }
 
 function createLineGraphforLightHouseScore(coreCompanyId) {
@@ -309,8 +312,9 @@ function createLineGraphforLightHouseScore(coreCompanyId) {
     { color: 'rgba(255, 205, 86, 0.2)', start: 50, end: 75 },
     { color: 'rgba(75, 192, 192, 0.2)', start: 75, end: 100 },
   ];
+  const stepSize = 20;
 
-  createLineGraph(url, chartId, datasets, yAxisConfig);
+  createLineGraph(url, chartId, datasets, yAxisConfig, stepSize);
 }
 
 function createColoredRing(elementId, value) {
