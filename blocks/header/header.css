@@ -357,3 +357,7 @@ header nav .nav-sections ul > li > ul {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+.hackathon header .nav-brand {
+  flex-basis: 158px;
+}
