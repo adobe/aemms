@@ -822,3 +822,7 @@ main .section.highlight {
 .homepage .section .default-content-wrapper p {
   margin: 0;
 }
+
+.hackathon .banner-container {
+  padding-top: 20px;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /*
 Copyright 2022 Adobe. All rights reserved.
 This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -239,6 +240,54 @@ export function highlightText(element) {
   });
 }
 
+function replacePlaceholders(BPOData) {
+  let bodyText = document.body.innerHTML;
+  const placeholderText = bodyText.match(/\{[^}]+\}/g);
+
+  if (!placeholderText) {
+    console.log('No placeholders found.');
+    return;
+  }
+
+  placeholderText.forEach((placeholder) => {
+    const placeholderName = placeholder.slice(1, -1);
+    const dataObject = BPOData.find((item) => item.Key === placeholderName);
+
+    if (dataObject) {
+      bodyText = bodyText.replace(new RegExp(`\\{${placeholderName}\\}`, 'g'), dataObject.Text);
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('Value not found in BPOData:', placeholderName);
+    }
+  });
+  document.body.innerHTML = bodyText;
+
+  // console.log('Placeholders replaced successfully.');
+}
+
+export function loadBPOData() {
+  window.siteindex = window.siteindex || { data: [], loaded: false };
+  fetch('/hackathon-2024/placeholders.json')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      window.siteindex.data = responseJson?.data;
+      if (window.siteindex && window.siteindex.loaded) {
+        replacePlaceholders(window.siteindex.data);
+      } else {
+        document.addEventListener('dataset-ready', () => {
+          replacePlaceholders(window.siteindex.data);
+        });
+      }
+      window.siteindex.loaded = true;
+      const event = new Event('dataset-ready');
+      document.dispatchEvent(event);
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.log(`Error loading placeholders: ${error.message}`);
+    });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -257,6 +306,7 @@ export function decorateMain(main) {
   buildTocBlock(main);
   decorateExternalLinks(main);
   highlightText(main);
+  loadBPOData();
 }
 
 /**

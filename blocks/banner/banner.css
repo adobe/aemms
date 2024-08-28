@@ -1,0 +1,51 @@
+.hackathon .banner.bpo > div:first-child {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #5A5C6D;
+}
+
+.hackathon .banner.bpo > div:first-child > div:first-child {
+  flex-grow: 1; /* Allow the first div to take up the remaining space */
+  border-right: 2px solid white; /* Add a border to the right of the first div */
+}
+
+.hackathon .banner.bpo > div:first-child > div:last-child {
+  margin-left: auto; /* Push the second div to the right */
+}
+
+.hackathon .banner.bpo h1 {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.hackathon .banner.bpo p em {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}
+
+.hackathon .banner.bpo p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hackathon .banner.bpo p:last-child{
+  border-top: 2px solid white;
+  background-color: lightgrey;
+  width: 100%;
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Vertically center align */
+}
+
+.hackathon .banner.bpo p:last-child em {
+  color: black;
+  font-size: 20px;
+}
+
+
+
+
