@@ -223,6 +223,8 @@ governing permissions and limitations under the License.
   .columns.plain-links > div > div p {
     font-size: var(--body-font-size-s);
     margin-left: 0;
+    max-width: 100%;
+    overflow: auto;
   }
   
   .columns.text-layout > div > div h2 {

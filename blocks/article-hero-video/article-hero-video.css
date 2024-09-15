@@ -6,7 +6,7 @@ div.article-hero-video-container {
   
   div.article-hero-video {
     width: 100vw;
-    height: calc(100vh - var(--nav-height));
+    height: auto;
     animation-timing-function: linear;
     margin: 0 0 5rem;
     background-color: var(--footer-background-color);
@@ -128,6 +128,17 @@ div.article-hero-video-container {
   }
   
   @media screen and (min-width: 900px) {
+    div.article-hero-video {
+      width: 100vw;
+      height: calc(100vh - var(--nav-height));
+      animation-timing-function: linear;
+      margin: 0 0 5rem;
+      background-color: var(--footer-background-color);
+      position: relative;
+    
+      --current-link-color: var(--text-color-on-black-background);
+    }
+
     .article-hero-video p.authors {
       font-size: 24px;
       line-height: 32px;
