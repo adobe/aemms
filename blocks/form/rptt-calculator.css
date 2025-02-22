@@ -1,0 +1,181 @@
+/* CSS for Forms RPTT Calculator  */
+
+:root {
+    --form-font-size-xxs: 11px;
+}
+
+main .mainmenu .rightsection .form.calculator.block form:first-child {
+    gap: 0 40px;
+}
+
+main .mainmenu .rightsection .form.calculator.block {
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 8px;
+    width: 437px;
+}
+
+main .mainmenu .rightsection.form-container:has(.form.calculator.block) {
+    padding: 10px;
+    margin: 0;
+    width: 437px;
+}
+
+main .mainmenu .rightsection.form-container:has(.form.calculator.block) .default-content-wrapper {
+    width: 437px;
+    margin: 0;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 8px;
+}
+
+main .mainmenu .rightsection.form-container:has(.form.calculator.block) .default-content-wrapper h2 {
+    font-weight: normal;
+    font-size: 21px;
+    font-family: var(--heading-font-family);
+    margin-bottom: 30px;
+}
+
+main .mainmenu .rightsection.form-container:has(.form.calculator.block) .default-content-wrapper img {
+    margin-top: 30px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    height: 47px;
+    border-bottom: 2px solid #000;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.button-wrapper::after {
+    content: "";
+    width: .7vw;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.button-wrapper button {
+    padding: .375rem .75rem;
+    background: #0094C3;
+    color: #fff;
+    border: 0;
+    border-radius: 0;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.5;
+    vertical-align: top;
+    font-family: var(--heading-font-family);
+    transition: all .3s;
+    flex-grow: .13;
+    width: 30vw;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label {
+    flex-basis: 55%;
+    font-size: var(--form-font-size-xxs);
+    color: black;
+    padding: 10px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='salespricetop'] {
+    border-left: 1px solid #aabec1;
+    border-bottom: 1px solid #aabec1;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='taxableamount'] {
+    border-left: 1px solid #aabec1;
+    border-bottom: 1px solid #aabec1;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='taxmultiplier'] {
+    border-left: 1px solid #aabec1;
+    border-bottom: 1px solid #aabec1;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='ownershippercentage'] {
+    border-left: 1px solid #aabec1;
+    border-bottom: 1px solid #aabec1;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='deed'] {
+    position: relative;
+    left: 10px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='transfertax'] {
+    position: relative;
+    left: 10px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper label[for='realpropertyttd'] {
+    position: relative;
+    left: 10px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper input {
+    flex-basis: 35%;
+    height: 18px;
+    padding: 10px 14px;
+    border: 1px solid #92ACAF;
+    background-color: #eee;
+    text-align: right;
+    font-size: var(--form-font-size-xxs);
+    border-radius: 0;
+    margin: 0;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.text-wrapper label {
+    flex-basis: 55%;
+    font-size: var(--form-font-size-xxs);
+    color: black;
+    position: relative;
+    left: 20px;
+}
+
+main .mainmenu .rightsection .form.block.calculator div.text-wrapper input {
+    flex-basis: 35%;
+    height: 18px;
+    padding: 10px 14px;
+    text-align: right;
+    font-size: var(--form-font-size-xxs);
+    border-radius: 0;
+    margin: 0;
+    border-width: 0;
+    pointer-events: none; 
+}
+
+main .mainmenu .rightsection .form.block.calculator div.number-wrapper:has(label[for='taxmultiplier']) input {
+    background: white;
+    border-width: 0;
+    pointer-events: none;
+}
+
+@media (width >= 900px) {
+    main .mainmenu .rightsection.form-container:has(.form.calculator.block) {
+        padding: 50px 50px 60px;
+    }
+
+    main .mainmenu .rightsection .form.block.calculator div.button-wrapper button {
+        width: auto;
+    }
+}
