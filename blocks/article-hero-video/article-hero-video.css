@@ -171,7 +171,7 @@ div.article-hero-video-container {
   @media screen and (min-width: 1200px) {
     .article-hero-video div.title-container {
         position: absolute;
-        top: 80%;
+        top: 70%;
         left: 70%;
         transform: translate(-50%, -50%);
         width: auto;
