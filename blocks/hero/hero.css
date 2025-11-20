@@ -75,8 +75,8 @@ main .hero img {
 
 @media (min-width: 900px) {
     .toc-layout .hero h1 {
-        font-size: 2em;
-        padding-top: 10px;
+        font-size: 2.5em;
+        padding-top: 80px;
     }
 
     .toc-layout .hero h2 {
@@ -84,6 +84,6 @@ main .hero img {
     }
 
     main .hero {
-        min-height: 200px;
+        min-height: 400px;
     }
 }
